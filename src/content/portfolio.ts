@@ -61,7 +61,6 @@ export const SOCIALS: SocialLink[] = [
     href: "https://www.linkedin.com/in/amitkov/",
     icon: Linkedin,
   },
-  { label: "Website", href: "https://amitkov.dev", icon: Globe },
   { label: "Email", href: "mailto:alex.mitkov.dev@gmail.com", icon: Mail },
 ];
 
