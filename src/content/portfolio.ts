@@ -212,17 +212,6 @@ export const TIMELINE: TimelineItem[] = [
     ],
   },
   {
-    title: "Quantum Computing • UC Merced (M.S. in Theoretical Chemistry)",
-    org: "University of California, Merced",
-    timeframe: "2024 — 2026",
-    icon: GraduationCap,
-    bullets: [
-      "Worked on quantum computing, quantum control, and quantum error correction research with strong computational components.",
-      "Built simulation workflows and analysis tooling; emphasized reproducibility and clear reporting.",
-      "Collaborated across disciplines; communicated results to both technical and non-technical audiences during seminars, poster conferenses, and group meetings.",
-    ],
-  },
-  {
   title: "AI • Monash University (MCS in Artificial Intelligence)",
   org: "Monash University",
   timeframe: "2026 — 2028",
@@ -233,5 +222,16 @@ export const TIMELINE: TimelineItem[] = [
     "Developing skills in Python, optimization, and scalable AI system design.",
   ],
 },
+  {
+    title: "Quantum Computing • UC Merced (M.S. in Computational Chemistry)",
+    org: "University of California, Merced",
+    timeframe: "2024 — 2026",
+    icon: GraduationCap,
+    bullets: [
+      "Worked on quantum computing, quantum control, and quantum error correction research with strong computational components.",
+      "Built simulation workflows and analysis tooling; emphasized reproducibility and clear reporting.",
+      "Collaborated across disciplines; communicated results to both technical and non-technical audiences during seminars, poster conferenses, and group meetings.",
+    ],
+  },
 ];
 
