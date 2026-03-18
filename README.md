@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Portfolio Website (Next.js App Router)
 
-## Getting Started
+Modern, dark-first, recruiter-friendly portfolio focused on **software engineering**, **ML engineering**, and **data engineering** roles — with a background narrative in **quantum computing + AI research**.
 
-First, run the development server:
+### Tech
+
+- **Next.js (App Router)** + **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (subtle motion)
+- **Accessible + responsive** UI
+
+### Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Where to edit content (high-signal)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Primary content file**: `src/content/portfolio.ts`
+  - `SITE`: name, headline, summary, resume path
+  - `SOCIALS`: GitHub / LinkedIn / Email links
+  - `PROJECTS`: all project cards + modal details
+  - `SKILLS`: grouped skill chips
+  - `TIMELINE`: experience/education timeline entries
 
-## Learn More
+### Resume
 
-To learn more about Next.js, take a look at the following resources:
+- Replace `public/resume.pdf` with your real resume PDF (same filename).
+- The “Download Resume” button in the navbar + hero links to `/resume.pdf`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Branding / metadata
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Update SEO in `src/app/layout.tsx` (title, description, `metadataBase`, OpenGraph, Twitter card).
 
-## Deploy on Vercel
+### Component structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `src/components/nav/navbar.tsx`: sticky navbar, mobile menu, active section highlight
+- `src/components/sections/*`: page sections (Hero, About, Projects, Skills, Experience, Contact)
+- `src/components/ui/*`: reusable primitives (Button, Badge, Card, Modal, Container)
+- `src/components/active-section.tsx`: IntersectionObserver-based active nav section tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Deploy
+
+This repo is deploy-ready for platforms like Vercel:
+
+```bash
+npm run build
+npm run start
+```
+
