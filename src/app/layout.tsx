@@ -4,6 +4,7 @@ import "./globals.css";
 import { ActiveSectionProvider } from "@/components/active-section";
 import { Navbar } from "@/components/nav/navbar";
 import { Footer } from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ActiveSectionProvider>
+        <Analytics />
       </body>
     </html>
   );
