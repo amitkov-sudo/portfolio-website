@@ -1,6 +1,6 @@
 ## Portfolio Website (Next.js App Router)
 
-Modern, dark-first, recruiter-friendly portfolio focused on **software engineering**, **ML engineering**, and **data engineering** roles — with a background narrative in **quantum computing + AI research**.
+Modern, dark-first focused on **software engineering**, **ML engineering**, and **data engineering** roles — with a background narrative in **quantum computing + AI research**.
 
 ### Tech
 
