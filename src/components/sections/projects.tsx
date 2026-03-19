@@ -122,7 +122,7 @@ export function Projects() {
 
                 <div className="mt-5 rounded-xl bg-white/[0.03] ring-1 ring-white/10 p-4">
                   <p className="text-xs font-semibold tracking-[0.22em] uppercase text-white/55">
-                    Outcome
+                    Impact
                   </p>
                   <p className="mt-2 text-sm text-white/80 leading-7">
                     {p.impact}
