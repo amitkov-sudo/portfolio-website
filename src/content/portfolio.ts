@@ -78,6 +78,7 @@ export const PROJECTS: Project[] = [
       "Java",
       "JavaScript",
       "PostgreSQL",
+      "PyTorch",
       "Airflow",
       "Docker",
       "Time-series",
@@ -193,10 +194,22 @@ export const SKILLS: SkillGroup[] = [
     label: "Cloud / DevOps",
     items: ["Docker", "CI/CD basics", "Infrastructure concepts", "Monitoring"],
   },
-  {
-    label: "Tools",
-    items: ["Git", "PostgreSQL", "dbt", "Airflow concepts", "Jupyter", "FastAPI", "Kafka", "Spring Boot", "Hybernate", "Qiskit"],
-  },
+ {
+  label: "Tools & Frameworks",
+  items: [
+    "Git (version control, branching strategies, CI/CD workflows)",
+    "PostgreSQL (data modeling, indexing, query optimization)",
+    "dbt (data transformations, analytics engineering, testing)",
+    "Apache Airflow (workflow orchestration, DAG design, scheduling)",
+    "Apache Kafka (event streaming, message queues, real-time pipelines)",
+    "FastAPI (high-performance APIs, async services, model serving)",
+    "Spring Boot & Hibernate (backend services, ORM, REST APIs)",
+    "Jupyter Notebooks (exploratory analysis, prototyping, experimentation)",
+    "PyTorch (deep learning, model training, experimentation)",
+    "scikit-learn (classical ML, feature engineering, evaluation)",
+    "Qiskit (quantum circuits, simulation, hybrid quantum-classical workflows)"
+  ]
+}
 ];
 
 export const TIMELINE: TimelineItem[] = [
