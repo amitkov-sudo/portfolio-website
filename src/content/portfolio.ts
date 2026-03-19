@@ -64,7 +64,7 @@ export const SOCIALS: SocialLink[] = [
 export const PROJECTS: Project[] = [
   {
     slug: "amcast-ai",
-    title: "AmCast AI — Amtrak Delay Prediction (In Progress)",
+    title: "RailCast AI — California Transit Delay Prediction (In Progress)",
     description:
       "End-to-end machine learning system for predicting train delays using historical rail data, combining data pipelines, feature engineering, and API-based inference.",
     stack: [
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
       "Time-series",
     ],
     impact:
-      "Highlights practical ML and data engineering skills by tackling real-world transportation reliability, with a focus on pipeline design, feature construction, and deployable prediction services.",
+      "Intends to highlight practical ML and data engineering skills by tackling real-world transportation reliability, with a focus on pipeline design, feature construction, and deployable prediction services.",
     links: {
       github: {
         label: "GitHub",
