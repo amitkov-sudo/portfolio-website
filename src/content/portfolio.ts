@@ -44,7 +44,7 @@ export const SITE = {
   name: "Alex Mitkov",
   roleLine: "Fullstack and Backend Engineer • ML & Data Engineer • Quantum + AI",
   headline:
-    "Full-Stack, Backend, Data Engineering, and ML Systems",
+    "Full-Stack SWE, Data Engineering, and ML Systems",
   summary:
     "I build production-minded backend, data, and ML systems — from reliable pipelines and analytics APIs to deployment-ready inference services. My background spans quantum computing and ML, with a focus on correctness, reproducibility, and measurable impact.",
   resumePath: "/resume.pdf",
