@@ -195,19 +195,20 @@ export const SKILLS: SkillGroup[] = [
     items: ["Docker", "CI/CD basics", "Infrastructure concepts", "Monitoring"],
   },
  {
-  label: "Tools & Frameworks",
+  label: "Tools",
   items: [
-    "Git (version control, branching strategies, CI/CD workflows)",
-    "PostgreSQL (data modeling, indexing, query optimization)",
-    "dbt (data transformations, analytics engineering, testing)",
-    "Apache Airflow (workflow orchestration, DAG design, scheduling)",
-    "Apache Kafka (event streaming, message queues, real-time pipelines)",
-    "FastAPI (high-performance APIs, async services, model serving)",
-    "Spring Boot & Hibernate (backend services, ORM, REST APIs)",
-    "Jupyter Notebooks (exploratory analysis, prototyping, experimentation)",
-    "PyTorch (deep learning, model training, experimentation)",
-    "scikit-learn (classical ML, feature engineering, evaluation)",
-    "Qiskit (quantum circuits, simulation, hybrid quantum-classical workflows)"
+    "Git",
+    "Postgres",
+    "dbt",
+    "Airflow",
+    "Kafka",
+    "FastAPI",
+    "Spring",
+    "Hibernate",
+    "Jupyter",
+    "PyTorch",
+    "sklearn",
+    "Qiskit"
   ]
 }
 ];
