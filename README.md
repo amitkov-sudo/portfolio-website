@@ -1,54 +1,71 @@
-## Portfolio Website (Next.js App Router)
+# Portfolio Website
 
-Modern, dark-first showcasing portfolio in a timeline and toolkit-first fashion. 
+A personal portfolio built with Next.js. The UI is dark-themed by default, with a project timeline, skills, and a contact form. Layout is responsive and built with accessibility in mind.
 
-### Tech
+## Tech stack
 
-- **Next.js (App Router)** + **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion** (subtle motion)
-- **Accessible + responsive** UI
+| Area | Technology |
+|------|------------|
+| Framework | Next.js (App Router), TypeScript |
+| Styling | Tailwind CSS |
+| Motion | Framer Motion |
+| UI | Accessible, responsive components |
 
-### Local development
+## Prerequisites
+
+- Node.js 18+ (or the version your deployment target requires)
+- npm (or compatible package manager)
+
+## Getting started
+
+Install dependencies and start the development server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Where to edit content (high-signal)
+## Configuration
 
-- **Primary content file**: `src/content/portfolio.ts`
-  - `SITE`: name, headline, summary, resume path
-  - `SOCIALS`: GitHub / LinkedIn / Email links
-  - `PROJECTS`: all project cards + modal details
-  - `SKILLS`: grouped skill chips
-  - `TIMELINE`: experience/education timeline entries
+### Site content
+
+Most copy and structured data live in **`src/content/portfolio.ts`**:
+
+| Export | Purpose |
+|--------|---------|
+| `SITE` | Name, role, headline, summary, resume link |
+| `SOCIALS` | GitHub, LinkedIn, email |
+| `PROJECTS` | Project cards and detail modals |
+| `SKILLS` | Grouped skill lists |
+| `TIMELINE` | Experience and education |
 
 ### Resume
 
-- Replace `src/content/resume.pdf` with your PDF (same filename). It is served by `src/app/api/resume/route.ts`.
-- The “Download Resume” button in the navbar + hero links to `/api/resume`.
+Place your PDF at **`src/content/resume.pdf`** (keep this filename). It is served by the API route at **`src/app/api/resume/route.ts`**. The navbar and hero “Download Resume” actions point to **`/api/resume`**.
 
-### Branding / metadata
+### SEO and branding
 
-- Update SEO in `src/app/layout.tsx` (title, description, `metadataBase`, OpenGraph, Twitter card).
+Edit **`src/app/layout.tsx`** for page title, description, `metadataBase`, Open Graph, and Twitter card metadata.
 
-### Component structure
+## Project structure
 
-- `src/components/nav/navbar.tsx`: sticky navbar, mobile menu, active section highlight
-- `src/components/sections/*`: page sections (Hero, About, Projects, Skills, Experience, Contact)
-- `src/components/ui/*`: reusable primitives (Button, Badge, Card, Modal, Container)
-- `src/components/active-section.tsx`: IntersectionObserver-based active nav section tracking
+| Path | Role |
+|------|------|
+| `src/components/nav/navbar.tsx` | Sticky navigation, mobile menu, active section |
+| `src/components/sections/*` | Page sections (Hero, About, Projects, Skills, Experience, Contact) |
+| `src/components/ui/*` | Shared UI (buttons, cards, modal, container, etc.) |
+| `src/components/active-section.tsx` | Tracks the active section via `IntersectionObserver` for nav highlighting |
+| `src/app/api/contact/` | Contact form submission handler |
 
-### Deploy
+## Deployment
 
-This repo is deploy-ready for platforms like Vercel:
+The app is suitable for static-friendly or Node hosts (for example Vercel). Build and run a production server locally with:
 
 ```bash
 npm run build
 npm run start
 ```
 
+Ensure environment variables required by **`src/app/api/contact/route.ts`** (e.g. Resend and contact addresses) are set in your hosting provider if you use the contact form.
