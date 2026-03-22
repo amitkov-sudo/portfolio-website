@@ -8,8 +8,6 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import resumePdf from "./resume.pdf";
-
 export type SocialLink = {
   label: string;
   href: string;
@@ -49,7 +47,7 @@ export const SITE = {
     "Full-Stack SWE, Data Engineering, and ML Systems",
   summary:
     "I build production-minded backend, data, and ML systems — from reliable pipelines and analytics APIs to deployment-ready inference services. My background spans quantum computing and ML, with a focus on correctness, reproducibility, and measurable impact.",
-  resumePath: resumePdf,
+  resumePath: "/api/resume",
   locationLine: "Las Vegas, NV, USA • Open to remote",
 } as const;
 

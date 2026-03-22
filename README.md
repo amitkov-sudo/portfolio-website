@@ -29,8 +29,8 @@ Then open `http://localhost:3000`.
 
 ### Resume
 
-- Replace `public/resume.pdf` with your real resume PDF (same filename).
-- The “Download Resume” button in the navbar + hero links to `/resume.pdf`.
+- Replace `src/content/resume.pdf` with your PDF (same filename). It is served by `src/app/api/resume/route.ts`.
+- The “Download Resume” button in the navbar + hero links to `/api/resume`.
 
 ### Branding / metadata
 
