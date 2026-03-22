@@ -47,7 +47,7 @@ export const SITE = {
     "Full-Stack SWE, Data Engineering, and ML Systems",
   summary:
     "I build production-minded backend, data, and ML systems — from reliable pipelines and analytics APIs to deployment-ready inference services. My background spans quantum computing and ML, with a focus on correctness, reproducibility, and measurable impact.",
-  resumePath: "/resume.pdf",
+  resumePath: "**/resume.pdf",
   locationLine: "Las Vegas, NV, USA • Open to remote",
 } as const;
 
