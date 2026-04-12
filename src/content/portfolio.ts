@@ -65,7 +65,7 @@ export const SOCIALS: SocialLink[] = [
 export const PROJECTS: Project[] = [
   {
     slug: "railcast-ai",
-    title: "RailCast AI — BART Transit Delay Prediction System",
+    title: "RailCast AI: BART Transit Delay Prediction System",
     description:
       "Provides real-time transit delay predictions by combining live GTFS data directly from BART with schedule context, ensuring accurate arrival estimates even when live signals are sparse.",
 
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "scalable-churn-prediction",
-    title: "RetentionIQ — Churn Prediction (MLOps-style)",
+    title: "RetentionIQ: Churn Prediction (MLOps-style)",
     description:
       "Production-style churn prediction system with drift simulation, automated retraining, FastAPI inference, monitoring, and Dockerized deployment.",
     stack: [
