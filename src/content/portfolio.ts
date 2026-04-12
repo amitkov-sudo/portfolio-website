@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     slug: "railcast-ai",
     title: "RailCast AI — BART Transit Delay Prediction System",
     description:
-      "Spring Boot and React stack with GTFS-RT–first predictions, ML fallback, and static schedule defaults over tens of thousands of ingested rows — tuned inference, indexed PostgreSQL, and Airflow-driven lifecycle automation.",
+      "Provides real-time transit delay predictions by combining live GTFS data directly from BART with schedule context, ensuring accurate arrival estimates even when live signals are sparse.",
 
     stack: [
       "Python",
@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
     ],
 
     impact:
-      "Shows a layered prediction stack (live feed → model → schedule), measurable model quality, sub-13ms warm inference after optimization, and disciplined release automation across Python, Java, and frontend builds.",
+      "Engineered a layered prediction stack (live feed → model → schedule), measurable model quality, sub-13ms warm inference after optimization, and disciplined release automation across Python, Java, and frontend builds.",
 
     links: {
       github: {
@@ -97,7 +97,7 @@ export const PROJECTS: Project[] = [
     },
 
     details: [
-      "Designed a Spring Boot REST API serving a React client: resolving live GTFS-RT stop times, falling back to an XGBoost regressor (val MAE 1.22 min) when real-time data was unavailable, and defaulting to static schedule as a last resort across 40,968 ingested rows.",
+      "Designed a Spring Boot REST API serving a React client: resolving live GTFS-RT stop times using an XGBoost regressor (approx. MAE 1.22 min), and defaulting to static schedule as a last resort across 40,968 ingested rows.",
       "Reduced FastAPI inference to sub-13ms mean over 500 warm calls by profiling the prediction path end-to-end and adding B-tree indexes on high-cardinality PostgreSQL columns.",
       "Automated the full data and model lifecycle with a daily Airflow DAG: enforced releases with a CI script spanning Python, Maven, and frontend builds.",
     ],
@@ -106,7 +106,10 @@ export const PROJECTS: Project[] = [
     slug: "jpmorgan-forage-midas",
     title: "JPMorgan Chase Advanced Software Engineering Program",
     description:
-      "Midas Core in Spring Boot: Kafka-driven ledger processing with validation, JPA persistence on H2, HTTP integration with an external Incentive API, and REST exposure of account state.",
+      "Real-time transaction processing system (Midas Core) which processes and " +
+        "validates financial transactions in real time using an " +
+        "event-driven architecture, maintaining account balances, " +
+        "applying incentives, and exposing up-to-date account state via APIs.",
     stack: [
       "Java",
       "Spring Boot",
@@ -119,7 +122,7 @@ export const PROJECTS: Project[] = [
       "Maven",
     ],
     impact:
-      "Demonstrates event-driven banking-style flows: safe consumption of async messages, transactional balance updates, and coordinated HTTP side effects with testable Spring components.",
+      "Engineered an event-driven banking-style flows: safe consumption of async messages, transactional balance updates, and coordinated HTTP side effects with testable Spring components.",
     links: {
       github: {
         label: "GitHub",
@@ -146,7 +149,7 @@ export const PROJECTS: Project[] = [
       "Feature engineering",
     ],
     impact:
-      "Showcases end-to-end ML engineering: reproducible runs, operational thinking, and a credible path from training to deployment and monitoring.",
+      "Engineered an end-to-end ML engineering: reproducible runs, operational thinking, and a credible path from training to deployment and monitoring.",
     links: {
       github: {
         label: "GitHub",
@@ -184,7 +187,16 @@ export const PROJECTS: Project[] = [
 export const SKILLS: SkillGroup[] = [
   {
     label: "Languages",
-    items: ["Bash", "C++", "Fortran", "Java", "JavaScript", "Python", "SQL"],
+    items: [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C++",
+      "Fortran",
+      "SQL",
+      "TypeScript",
+      "Bash",
+    ],
   },
   {
     label: "Frameworks",
@@ -195,6 +207,8 @@ export const SKILLS: SkillGroup[] = [
     items: [
       "Data modeling",
       "ETL/ELT",
+      "NLP",
+      "RAG",
       "Feature engineering",
       "Experiment design",
       "Model evaluation",
@@ -203,7 +217,7 @@ export const SKILLS: SkillGroup[] = [
   },
   {
     label: "Cloud / DevOps",
-    items: ["Docker", "CI/CD basics", "Infrastructure concepts", "Monitoring"],
+    items: ["AWS Tools", "Docker", "CI/CD basics", "Infrastructure concepts", "Monitoring"],
   },
  {
   label: "Tools",
@@ -220,7 +234,8 @@ export const SKILLS: SkillGroup[] = [
     "Jupyter",
     "PyTorch",
     "sklearn",
-    "Qiskit"
+    "Qiskit",
+    "Computer Vision",
   ]
 }
 ];
@@ -232,10 +247,10 @@ export const TIMELINE: TimelineItem[] = [
     timeframe: "Mar 2026 – Present",
     icon: Briefcase,
     bullets: [
-      "Architected a multi-engine OCR document processing pipeline in Python (OpenCV, PIL, Tesseract, PaddleOCR, EasyOCR): preprocessing scanned documents and emitting structured JSON with field-level coordinates across multiple document types.",
+      "Developing a multi-engine OCR document processing pipeline in Python (OpenCV, PIL, Tesseract, PaddleOCR, EasyOCR): preprocessing scanned documents and emitting structured JSON with field-level coordinates across multiple document types.",
       "Benchmarked three OCR engines against real pharmaceutical scans; identified accuracy divergence by document type and delivered a data-backed engine recommendation.",
-      "Designed document classification and routing logic in Python to categorize incoming files and dispatch them to the correct extraction pipeline: reducing processing ambiguity and enabling modular extension.",
-      "Built a RAG retrieval system using LlamaIndex, FAISS/Chroma, and metadata filtering over Gemini and open-source LLMs, surfaced through a Gradio/Streamlit interface.",
+      "Designing document classification and routing logic in Python to categorize incoming files and dispatch them to the correct extraction pipeline: reducing processing ambiguity and enabling modular extension.",
+      "Building a RAG retrieval system using LlamaIndex, FAISS/Chroma, and metadata filtering over Gemini and open-source LLMs, surfaced through a Gradio/Streamlit interface.",
     ],
   },
   {
@@ -255,8 +270,8 @@ export const TIMELINE: TimelineItem[] = [
   timeframe: "2026 — Present",
   icon: Database,
   bullets: [
-    "Incoming MCS student in Artificial Intelligence at Monash University.",
-    "Learning machine learning, deep learning, and NLP to build intelligent systems.",
+    "Incoming MCS student in Artificial Intelligence at Monash University (Remote, Offshore).",
+    "Learning machine learning, deep learning, computer vision, and NLP to build intelligent systems.",
     "Developing skills in Python, optimization, and scalable AI system design.",
   ],
 },
@@ -266,7 +281,7 @@ export const TIMELINE: TimelineItem[] = [
     timeframe: "2024 — 2026",
     icon: GraduationCap,
     bullets: [
-      "Worked on quantum computing, quantum control, and quantum error correction research with strong computational components.",
+      "Worked on quantum computing, quantum control, quantum molecular simulations, and quantum error correction research with strong computational components.",
       "Built simulation workflows and analysis tooling; emphasized reproducibility and clear reporting.",
       "Collaborated across disciplines; communicated results to both technical and non-technical audiences during seminars, poster conferenses, and group meetings.",
     ],
