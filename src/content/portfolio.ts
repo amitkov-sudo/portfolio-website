@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Briefcase,
   Database,
   Github,
   GraduationCap,
@@ -63,47 +64,73 @@ export const SOCIALS: SocialLink[] = [
 
 export const PROJECTS: Project[] = [
   {
-  slug: "amcast-ai",
-  title: "RailCast AI — BART Transit Delay Prediction System (Current)",
-  description:
-    "Production-style ML and data engineering system for predicting BART train delays using GTFS static and real-time transit data, with a focus on pipeline design, data modeling, and API-based inference.",
+    slug: "railcast-ai",
+    title: "RailCast AI — BART Transit Delay Prediction System",
+    description:
+      "Spring Boot and React stack with GTFS-RT–first predictions, ML fallback, and static schedule defaults over tens of thousands of ingested rows — tuned inference, indexed PostgreSQL, and Airflow-driven lifecycle automation.",
 
-  stack: [
-    "Python",
-    "pandas",
-    "scikit-learn",
-    "FastAPI",
-    "PostgreSQL",
-    "SQL",
-    "Airflow",
-    "Docker",
-    "Java",
-    "JavaScript",
-    "Time-series",
-    "GTFS",
-  ],
+    stack: [
+      "Python",
+      "Java",
+      "Spring Boot",
+      "React",
+      "FastAPI",
+      "XGBoost",
+      "pandas",
+      "scikit-learn",
+      "PostgreSQL",
+      "SQL",
+      "Airflow",
+      "Docker",
+      "GTFS / GTFS-RT",
+      "Maven",
+    ],
 
-  impact:
-    "Demonstrates end-to-end ownership of a real-world ML system: from GTFS data modeling and pipeline orchestration to feature engineering and deployable prediction APIs, focused on transit reliability and delay forecasting.",
+    impact:
+      "Shows a layered prediction stack (live feed → model → schedule), measurable model quality, sub-13ms warm inference after optimization, and disciplined release automation across Python, Java, and frontend builds.",
 
-  links: {
-    github: {
-      label: "GitHub",
-      href: "https://github.com/amitkov-sudo/amcast-ai",
+    links: {
+      github: {
+        label: "GitHub",
+        href: "https://github.com/amitkov-sudo/RailCast-AI",
+      },
     },
-  },
 
-  details: [
-    "Designing a relational PostgreSQL schema based on GTFS static data (stops, routes, trips, stop_times) for BART transit.",
-    "Building ingestion pipelines for GTFS static and planned real-time feeds, with idempotent loading and schema versioning.",
-    "Transforming schedule and stop-level data into structured delay signals for supervised learning.",
-    "Engineering temporal and sequence-based features (stop order, time-of-day, route direction, headsign patterns).",
-    "Developing baseline ML models (regression/classification) to predict delay likelihood and magnitude.",
-    "Implementing a FastAPI service to expose prediction endpoints for downstream applications.",
-    "Containerizing the system with Docker for reproducibility and deployment readiness.",
-    "Planning orchestration with Airflow for scheduled data updates, retraining, and pipeline monitoring.",
-  ],
-},
+    details: [
+      "Designed a Spring Boot REST API serving a React client: resolving live GTFS-RT stop times, falling back to an XGBoost regressor (val MAE 1.22 min) when real-time data was unavailable, and defaulting to static schedule as a last resort across 40,968 ingested rows.",
+      "Reduced FastAPI inference to sub-13ms mean over 500 warm calls by profiling the prediction path end-to-end and adding B-tree indexes on high-cardinality PostgreSQL columns.",
+      "Automated the full data and model lifecycle with a daily Airflow DAG: enforced releases with a CI script spanning Python, Maven, and frontend builds.",
+    ],
+  },
+  {
+    slug: "jpmorgan-forage-midas",
+    title: "JPMorgan Chase Advanced Software Engineering Program",
+    description:
+      "Midas Core in Spring Boot: Kafka-driven ledger processing with validation, JPA persistence on H2, HTTP integration with an external Incentive API, and REST exposure of account state.",
+    stack: [
+      "Java",
+      "Spring Boot",
+      "Spring Kafka",
+      "Spring Data JPA",
+      "H2",
+      "Kafka",
+      "REST",
+      "JUnit",
+      "Maven",
+    ],
+    impact:
+      "Demonstrates event-driven banking-style flows: safe consumption of async messages, transactional balance updates, and coordinated HTTP side effects with testable Spring components.",
+    links: {
+      github: {
+        label: "GitHub",
+        href: "https://github.com/amitkov-sudo/forage-midas",
+      },
+    },
+    details: [
+      "Built Midas Core in Spring Boot: implemented a Kafka listener deserializing Transaction messages into typed Java objects, enforced validation logic against user existence and account balances before commit, and persisted state via Spring Data JPA with H2.",
+      "Integrated with an external Incentive API via HTTP POST, applied conditional incentive logic to recipient balances, and exposed a REST endpoint returning JSON-serialized account state.",
+    ],
+  },
   {
     slug: "scalable-churn-prediction",
     title: "RetentionIQ — Churn Prediction (MLOps-style)",
@@ -152,38 +179,17 @@ export const PROJECTS: Project[] = [
       "Maintains clarity: assumptions, edge cases, and a clean narrative for decision-makers.",
     ],
   },
-  {
-    slug: "language-families-java",
-    title: "Language Families — Object-Oriented Modeling in Java",
-    description:
-      "Java-based object-oriented system modeling relationships between language families using inheritance, polymorphism, and linguistic features such as word order.",
-    stack: [
-      "Java",
-      "OOP",
-      "Inheritance",
-      "Polymorphism",
-      "Class design",
-    ],
-    impact:
-      "Demonstrates strong understanding of object-oriented design principles and the ability to model real-world hierarchical systems in clean, extensible Java code.",
-    links: {
-      github: {
-        label: "GitHub",
-        href: "https://github.com/amitkov-sudo/language-families-java",
-      },
-    },
-    details: [
-      "Designed a base Language class with shared properties and behaviors across language families.",
-      "Implemented specialized subclasses (e.g., Mayan, Sino-Tibetan) using inheritance and method overriding.",
-      "Modeled linguistic variation such as subject-verb-object vs subject-object-verb ordering.",
-      "Focused on clean class structure, readability, and extensibility of the system.",
-    ],
-  }
 ];
 
 export const SKILLS: SkillGroup[] = [
-  { label: "Languages", items: ["Java", "JavaScript", "Python", "SQL", "Bash", "Fortran"] },
-  { label: "Frameworks", items: ["Next.js", "React", "FastAPI", "Spring API"] },
+  {
+    label: "Languages",
+    items: ["Bash", "C++", "Fortran", "Java", "JavaScript", "Python", "SQL"],
+  },
+  {
+    label: "Frameworks",
+    items: ["FastAPI", "Flask", "Next.js", "Node.js", "React", "Spring API"],
+  },
   {
     label: "Data / ML",
     items: [
@@ -203,7 +209,8 @@ export const SKILLS: SkillGroup[] = [
   label: "Tools",
   items: [
     "Git",
-    "Postgres",
+    "PostgreSQL",
+    "H2",
     "dbt",
     "Airflow",
     "Kafka",
@@ -219,6 +226,18 @@ export const SKILLS: SkillGroup[] = [
 ];
 
 export const TIMELINE: TimelineItem[] = [
+  {
+    title: "AI/ML Engineering Extern",
+    org: "Pfizer (via Extern HQ)",
+    timeframe: "Mar 2026 – Present",
+    icon: Briefcase,
+    bullets: [
+      "Architected a multi-engine OCR document processing pipeline in Python (OpenCV, PIL, Tesseract, PaddleOCR, EasyOCR): preprocessing scanned documents and emitting structured JSON with field-level coordinates across multiple document types.",
+      "Benchmarked three OCR engines against real pharmaceutical scans; identified accuracy divergence by document type and delivered a data-backed engine recommendation.",
+      "Designed document classification and routing logic in Python to categorize incoming files and dispatch them to the correct extraction pipeline: reducing processing ambiguity and enabling modular extension.",
+      "Built a RAG retrieval system using LlamaIndex, FAISS/Chroma, and metadata filtering over Gemini and open-source LLMs, surfaced through a Gradio/Streamlit interface.",
+    ],
+  },
   {
     title: "Software & Machine Learning Projects",
     org: "Independent • Open Source",
