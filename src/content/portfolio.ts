@@ -168,8 +168,9 @@ export const PROJECTS: Project[] = [
     description:
       "Case study analyzing user drop-off, A/B test performance, and conversion behavior across a multi-stage onboarding funnel.",
     stack: ["SQL", "Python", "Analytics", "Experimentation", "Cohorts/Funnels"],
-    impact:
-  "Surfaces key conversion bottlenecks across the onboarding funnel, quantifies cohort-level behavior, and translates insights into testable, data-driven product decisions.",
+    impact: "Engineered funnel analytics to surface key conversion bottlenecks" +
+        " across the onboarding flow, quantify cohort-level behavior," +
+        " and translate insights into testable, data-driven product decisions.",
     links: {
       github: {
         label: "GitHub",
