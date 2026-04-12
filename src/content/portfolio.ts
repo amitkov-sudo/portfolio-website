@@ -136,9 +136,9 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "scalable-churn-prediction",
-    title: "RetentionIQ: Churn Prediction (MLOps-style)",
+    title: "RetentionIQ: Subscriber Churn Prediction System",
     description:
-      "Production-style churn prediction system with drift simulation, automated retraining, FastAPI inference, monitoring, and Dockerized deployment.",
+      "Production-style MLOps churn prediction system with drift simulation, automated retraining, FastAPI inference, monitoring, and Dockerized deployment.",
     stack: [
       "Python",
       "scikit-learn",
