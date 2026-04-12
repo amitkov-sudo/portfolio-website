@@ -237,6 +237,7 @@ export const SKILLS: SkillGroup[] = [
     "sklearn",
     "Qiskit",
     "Computer Vision",
+    "Vercel"
   ]
 }
 ];
