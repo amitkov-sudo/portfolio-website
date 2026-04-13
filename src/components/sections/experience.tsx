@@ -9,7 +9,7 @@ export function Experience() {
       <Container>
         <SectionHeading
           eyebrow="Experience / Education"
-          title="A timeline built for credibility."
+          title="Quick snapshot of my experience."
           description="A quick view of the work, study, and focus areas that shaped my engineering practice."
         />
 

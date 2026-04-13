@@ -46,8 +46,10 @@ export const SITE = {
   roleLine: "Fullstack and Backend Engineer • ML & Data Engineer • Quantum + AI",
   headline:
     "Full-Stack SWE, Data Engineering, and ML Systems",
-  summary:
-    "I build production-minded backend, data, and ML systems — from reliable pipelines and analytics APIs to deployment-ready inference services. My background spans quantum computing and ML, with a focus on correctness, reproducibility, and measurable impact.",
+  summary: "Entry-level backend and MLOps/AI engineer and data scientist with experience shipping distributed systems, " +
+      " decision engines, and data pipelines in production-adjacent environments. " +
+      " Focuses on clear service, measurable performance, and writing tested, " +
+      " extensible and reproducible code comfortable navigating large codebases and contributing across teams.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV, USA • Open to remote",
 } as const;

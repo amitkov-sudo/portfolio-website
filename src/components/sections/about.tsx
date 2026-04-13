@@ -16,27 +16,26 @@ export function About() {
           <Card className="p-6 lg:col-span-2">
             <p className="text-sm leading-7 text-white/75">
               Working at the intersection of software engineering, machine learning, AI,
-              and data engineering, with a focus on turning complex ideas into practical,
+              and data engineering and my main focus is turning complex ideas into practical,
               production-ready solutions. My strength is taking research-grade ideas and turning 
               them into production-minded systems: clear interfaces, measurable outcomes, 
               and reliable code.
             </p>
             <p className="mt-4 text-sm leading-7 text-white/75">
-              I care about correctness and reliability (tests, data contracts,
-              observability), but I’m equally focused on impact — shipping
-              useful features, improving decision quality, and building systems
-              that scale with teams.
+              I care about correctness and reliability but I’m equally focused on impact
+              — shipping useful features, improving decision quality, and building systems
+              that scale.
             </p>
             <p className="mt-4 text-sm leading-7 text-white/75">
               I’m most effective when the work benefits from strong systems
-              thinking — reliable data flows, clean service boundaries, and ML
-              workflows that are reproducible and easy to operate.
+              thinking; reliable data flows, clean service boundaries, and ML
+              workflows that bank on reproducibility.
             </p>
           </Card>
 
           <Card className="p-6">
             <h3 className="text-sm font-semibold text-white">
-              What I’m optimizing for
+              What I’m going for
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-white/75">
               <li>

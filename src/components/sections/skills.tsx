@@ -10,7 +10,7 @@ export function Skills() {
       <Container>
         <SectionHeading
           eyebrow="Skills"
-          title="A toolkit tuned for data + ML systems."
+          title="A rapidly growing and expanding toolkit."
           description="Languages, frameworks, and tools I use to ship and operate systems."
         />
 
