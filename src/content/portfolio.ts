@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: "sql-analytics-case-study",
-    title: "Eyeware Funnel Analysis (SQL + Python Case Study)",
+    title: "A/B Testing & Conversion Analysis (SQL + Python Case Study)",
     description:
       "Case study analyzing user drop-off, A/B test performance, and conversion behavior across a multi-stage onboarding funnel.",
     stack: ["SQL", "Python", "Analytics", "Experimentation", "Cohorts/Funnels"],
