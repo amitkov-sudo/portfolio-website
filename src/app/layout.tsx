@@ -52,7 +52,7 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light');if(sessionStorage.getItem('intro-seen')==='1')document.documentElement.classList.add('no-intro')}catch(e){}",
+              "try{if(localStorage.getItem('theme-v2')==='light')document.documentElement.classList.add('light');if(sessionStorage.getItem('intro-seen')==='1')document.documentElement.classList.add('no-intro')}catch(e){}",
           }}
         />
       </head>

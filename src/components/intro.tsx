@@ -2,11 +2,8 @@
 
 import * as React from "react";
 
-import { Michroma } from "next/font/google";
-
+import { michroma } from "@/lib/fonts";
 import { playRocket } from "@/lib/rocket-sound";
-
-const michroma = Michroma({ weight: "400", subsets: ["latin"], display: "swap" });
 
 /* Fast opening screen: a neural network draws itself across the whole
    screen, radiating out from the name, then the overlay lifts. Plays once per visit. The rocket whoosh plays

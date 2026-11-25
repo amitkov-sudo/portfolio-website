@@ -18,7 +18,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     setTheme(next);
     document.documentElement.classList.toggle("light", next === "light");
     try {
-      localStorage.setItem("theme", next);
+      localStorage.setItem("theme-v2", next);
     } catch {
       /* private mode: the choice lasts for this visit only */
     }
