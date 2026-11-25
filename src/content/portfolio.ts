@@ -255,11 +255,11 @@ export const CLIENT_WORK: ClientProject[] = [
     aiTool: {
       name: "Swipe & Style",
       description:
-        "Proprietary AI style matcher. Learns each visitor's taste from a few swipes through haircut photos, then suggests a look and the matching service to book.",
+        "A proprietary AI-powered style matching tool that identifies clients’ preferences through an interactive swiping experience and recommends hairstyles and relevant booking services.",
       points: [
-        "Matches a personal style in a few swipes",
-        "Sends each client's matches to the stylist before the appointment",
-        "Reports which looks clients love, with no names or device IDs",
+        "Personalised hairstyle and service recommendations",
+        "Client style preferences shared with the stylist prior to appointments",
+        "Anonymous analytics on client preferences and styling trends",
       ],
     },
     stack: ["HTML", "CSS", "JavaScript", "Machine learning", "Cloudflare Pages", "Cloudflare KV"],

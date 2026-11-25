@@ -75,7 +75,7 @@ export function ClientWork() {
                       </span>
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/80">
-                          AI tool
+                          AI-powered tool
                         </p>
                         <h4 className="text-base font-semibold tracking-tight text-white">
                           {w.aiTool.name}
