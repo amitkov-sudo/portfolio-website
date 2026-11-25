@@ -160,7 +160,7 @@ export const RESEARCH: ResearchItem[] = [
     timeframe: "2026",
     icon: ShieldCheck,
     summary:
-      "Researches the capabilities and failure modes of frontier AI models in expert computational science to support AI safety.",
+      "Researching the capabilities and failure modes of frontier AI models in expert computational science to support AI safety.",
     points: [],
     tags: ["AI safety", "Frontier AI capabilities", "Computational chemistry", "Quantum chemistry", "Scientific computing", "Python"],
   },
