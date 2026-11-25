@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Github } from "lucide-react";
 
 import { RESEARCH } from "@/content/portfolio";
 import { Badge } from "@/components/ui/badge";
@@ -70,6 +71,18 @@ export function Research() {
                     </Badge>
                   ))}
                 </div>
+
+                {r.github ? (
+                  <a
+                    href={r.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-white/80 ring-1 ring-white/10 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+                  >
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </a>
+                ) : null}
               </Card>
             </motion.div>
           ))}

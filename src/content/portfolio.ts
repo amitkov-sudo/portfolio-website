@@ -132,6 +132,7 @@ export type ResearchItem = {
   summary: string;
   points: string[];
   tags: string[];
+  github?: string;
 };
 
 export const RESEARCH: ResearchItem[] = [
@@ -150,6 +151,7 @@ export const RESEARCH: ResearchItem[] = [
       "Extends the test to safety, where a false alarm means refusing a safe request",
     ],
     tags: ["Reinforcement learning", "Self-correction", "GFlowNets", "GRPO", "AI safety"],
+    github: "https://github.com/amitkov-sudo/grpo-vs-gfn-self-correction",
   },
   {
     slug: "ai-evaluation",
