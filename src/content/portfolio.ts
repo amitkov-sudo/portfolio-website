@@ -144,11 +144,11 @@ export const RESEARCH: ResearchItem[] = [
     status: "Paper incoming",
     icon: FlaskConical,
     summary:
-      "Language models can register a wrong reasoning step and still build on the error. Tests whether fine-tuning teaches a model to fix that step without flagging correct ones.",
+      "Language models can register a wrong reasoning step and still build on the error. Testing whether fine-tuning teaches a model to fix that step without flagging correct ones.",
     points: [
-      "Measures the gap between errors a model detects and errors a model fixes",
-      "Compares GFlowNet-style fine-tuning with GRPO on real fixes against false alarms",
-      "Extends the test to safety, where a false alarm means refusing a safe request",
+      "Measuring the gap between errors a model detects and errors a model fixes",
+      "Comparing GFlowNet-style fine-tuning with GRPO on real fixes against false alarms",
+      "Extending the test to safety, where a false alarm means refusing a safe request",
     ],
     tags: ["Reinforcement learning", "Self-correction", "GFlowNets", "GRPO", "AI safety"],
     github: "https://github.com/amitkov-sudo/grpo-vs-gfn-self-correction",
@@ -462,7 +462,7 @@ export const TIMELINE: TimelineItem[] = [
     timeframe: "Sept 2026 – Present",
     icon: FlaskConical,
     bullets: [
-      "Researches whether fine-tuning teaches language models to act on detected errors, in a four-person team with an AI safety mentor.",
+      "Researching whether fine-tuning teaches language models to act on detected errors, in a four-person team with an AI safety mentor.",
       "Paper incoming.",
     ],
   },
