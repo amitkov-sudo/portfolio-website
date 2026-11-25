@@ -2,75 +2,16 @@
 
 import * as React from "react";
 
+import { playRocket } from "@/lib/rocket-sound";
+
 /* Fast opening screen: a neural network draws itself across the whole
-   screen, radiating out from the name, then the overlay lifts. Plays once per visit. A synth sweep and chime,
-   built with Web Audio, plays when the browser allows sound before a click.
+   screen, radiating out from the name, then the overlay lifts. Plays once per visit. The rocket whoosh plays
+   when the browser allows sound before a click.
    A click or key press skips the intro. */
 
 const KEY = "intro-seen";
 const DURATION = 900;
 const FADE = 300;
-
-function playIntroSound() {
-  try {
-    const AC =
-      window.AudioContext ||
-      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
-    if (!AC) return;
-    const ctx = new AC();
-    if (ctx.state === "suspended") void ctx.resume();
-    const t = ctx.currentTime + 0.02;
-
-    const master = ctx.createGain();
-    master.gain.setValueAtTime(0.0001, t);
-    master.gain.exponentialRampToValueAtTime(0.16, t + 0.04);
-    master.gain.setValueAtTime(0.16, t + 0.8);
-    master.gain.exponentialRampToValueAtTime(0.0001, t + 1.15);
-    master.connect(ctx.destination);
-
-    // Rising filtered sweep.
-    const sweep = ctx.createOscillator();
-    sweep.type = "sawtooth";
-    sweep.frequency.setValueAtTime(110, t);
-    sweep.frequency.exponentialRampToValueAtTime(440, t + 0.42);
-    const filter = ctx.createBiquadFilter();
-    filter.type = "lowpass";
-    filter.Q.value = 9;
-    filter.frequency.setValueAtTime(260, t);
-    filter.frequency.exponentialRampToValueAtTime(4200, t + 0.42);
-    const sweepGain = ctx.createGain();
-    sweepGain.gain.setValueAtTime(0.45, t);
-    sweepGain.gain.exponentialRampToValueAtTime(0.001, t + 0.55);
-    sweep.connect(filter);
-    filter.connect(sweepGain);
-    sweepGain.connect(master);
-    sweep.start(t);
-    sweep.stop(t + 0.58);
-
-    // Three-note digital chime.
-    [
-      [1318.5, 0.4],
-      [1975.5, 0.48],
-      [2637, 0.56],
-    ].forEach(([freq, at]) => {
-      const osc = ctx.createOscillator();
-      osc.type = "sine";
-      osc.frequency.value = freq;
-      const g = ctx.createGain();
-      g.gain.setValueAtTime(0.0001, t + at);
-      g.gain.exponentialRampToValueAtTime(0.32, t + at + 0.01);
-      g.gain.exponentialRampToValueAtTime(0.0001, t + at + 0.5);
-      osc.connect(g);
-      g.connect(master);
-      osc.start(t + at);
-      osc.stop(t + at + 0.55);
-    });
-
-    window.setTimeout(() => void ctx.close(), 1600);
-  } catch {
-    /* sound is optional; the intro works without it */
-  }
-}
 
 /* A full-screen network built from a fixed seed, so the server and the
    browser draw the same picture. The viewBox is a 1600 square and the SVG
@@ -129,7 +70,7 @@ export function Intro() {
       setPhase("gone");
       return;
     }
-    playIntroSound();
+    playRocket();
     const leave = window.setTimeout(() => setPhase("leave"), DURATION);
     const gone = window.setTimeout(() => setPhase("gone"), DURATION + FADE);
     const skip = () => {
