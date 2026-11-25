@@ -56,8 +56,9 @@ export const SITE = {
     "Alex Mitkov designs and builds websites, booking systems and AI tools for small businesses. Every project starts with a written scope and quote.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV",
-  priceRange: "$1,500 to $4,000+",
+  priceRange: "$1,500 to $5,000+",
   pricing: "Prices depend on the complexity of the build.",
+  serviceArea: "Website builds are available to US residents only.",
 } as const;
 
 export const TRUST_POINTS: string[] = [
@@ -102,7 +103,7 @@ export type Faq = { q: string; a: string };
 export const FAQS: Faq[] = [
   {
     q: "How much does a website cost?",
-    a: "Projects range from $1,500 to $4,000+. Pages, booking and payment features, and AI tools set the final price.",
+    a: "Projects range from $1,500 to $5,000+. Pages, booking and payment features, and AI tools set the final price.",
   },
   {
     q: "How long does a project take?",

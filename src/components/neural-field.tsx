@@ -112,17 +112,12 @@ export function NeuralField() {
       });
     }
 
-    function isDark() {
-      return !document.documentElement.classList.contains("light");
-    }
-
     function frame(now: number) {
       raf = requestAnimationFrame(frame);
       if (!visible) return;
-      const dark = isDark();
-      const line = dark ? "94, 234, 212" : "37, 99, 160";
-      const core = dark ? "236, 254, 255" : "30, 58, 138";
-      const spark = dark ? "125, 211, 252" : "79, 70, 229";
+      const line = "94, 234, 212";
+      const core = "236, 254, 255";
+      const spark = "125, 211, 252";
 
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx!.clearRect(0, 0, w, h);
@@ -159,7 +154,7 @@ export function NeuralField() {
           if (f < 0) continue;
           const depth = (a.z + b.z) / 2;
           const lit = Math.max(a.glow, b.glow);
-          const alpha = (1 - f) * (0.18 + 0.5 * depth) * (0.55 + lit) * (dark ? 1 : 1.35);
+          const alpha = (1 - f) * (0.18 + 0.5 * depth) * (0.55 + lit);
           ctx!.strokeStyle = `rgba(${line}, ${Math.min(alpha, 0.9)})`;
           ctx!.lineWidth = 0.6 + depth * 0.9;
           ctx!.beginPath();

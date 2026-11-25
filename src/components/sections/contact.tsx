@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Send } from "lucide-react";
 
-import { SOCIALS } from "@/content/portfolio";
+import { SITE, SOCIALS } from "@/content/portfolio";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
@@ -29,7 +29,7 @@ const DEFAULT_STATE: FormState = {
   message: "",
 };
 
-const BUDGETS = ["$1,500 to $2,500", "$2,500 to $4,000", "$4,000+", "Not sure yet"];
+const BUDGETS = ["$1,500 to $2,500", "$2,500 to $5,000", "$5,000+", "Not sure yet"];
 
 const FIELD =
   "h-11 w-full rounded-xl bg-white/5 px-4 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20";
@@ -155,6 +155,9 @@ export function Contact() {
                   />
                 </label>
               </div>
+              {state.topic === "project" ? (
+                <p className="text-xs text-white/55">{SITE.serviceArea}</p>
+              ) : null}
               {state.topic === "project" ? (
                 <div className="grid gap-4 sm:grid-cols-2">
                   <label className="space-y-2">

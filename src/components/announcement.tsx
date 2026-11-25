@@ -2,7 +2,7 @@ import { michroma } from "@/lib/fonts";
 
 /* Deep-space strip under the nav: twinkling stars, a nebula glow and an
    occasional shooting star.
-   It stays dark in both themes. Motion stops for reduced-motion visitors. */
+   Motion stops for reduced-motion visitors. */
 
 function seeded(seed: number) {
   return () => {

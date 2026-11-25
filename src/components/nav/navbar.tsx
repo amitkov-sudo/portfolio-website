@@ -9,7 +9,6 @@ import { useActiveSection } from "@/components/active-section";
 import { cn } from "@/lib/cn";
 import { NAV_ITEMS, type SectionId } from "@/lib/sections";
 import { ButtonLink } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Container } from "@/components/ui/container";
 
 function scrollToId(id: SectionId) {
@@ -97,7 +96,6 @@ export function Navbar() {
                 </a>
               ))}
             </div>
-            <ThemeToggle />
             <button
               onClick={() => {
                 setActiveSection("contact");
