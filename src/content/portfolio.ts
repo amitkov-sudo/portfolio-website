@@ -64,7 +64,6 @@ export const TRUST_POINTS: string[] = [
   "Founded by an AI researcher and engineer",
   "Written scope before any build work",
   "Projects from $1,500",
-  "Based in Las Vegas, serving clients anywhere",
 ];
 
 export type Step = { title: string; description: string };

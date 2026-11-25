@@ -80,7 +80,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <ul className="mt-14 grid gap-3 border-t border-white/10 pt-6 text-sm text-white/70 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-14 grid gap-3 border-t border-white/10 pt-6 text-sm text-white/70 sm:grid-cols-3">
           {TRUST_POINTS.map((t) => (
             <li key={t} className="flex items-start gap-2">
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
