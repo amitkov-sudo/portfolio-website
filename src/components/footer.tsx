@@ -8,7 +8,19 @@ export function Footer() {
         <div className="space-y-1">
           <p className="text-sm font-semibold text-white">{SITE.name}</p>
           <p className="text-sm text-white/60">
-            Built with Next.js, TypeScript, Tailwind, and Framer Motion.
+            Custom web experiences. AI-integrated intelligent business workflows.
+          </p>
+          <p className="text-xs text-white/40">
+            Designed, developed & AI-integrated by{" "}
+            <a
+              href="https://www.linkedin.com/in/amitkov/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4 hover:text-white"
+            >
+              Alex Mitkov
+            </a>
+            . © {new Date().getFullYear()}
           </p>
         </div>
 

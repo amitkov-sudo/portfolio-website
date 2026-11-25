@@ -17,25 +17,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Alex Mitkov — Backend / ML / Data Engineer",
-    template: "%s — Alex Mitkov",
+    default: "Alex Mitkov | Custom web experiences and AI workflows",
+    template: "%s | Alex Mitkov",
   },
   description:
-    "A dark, production-quality portfolio for software engineering, ML engineering, and data engineering roles.",
+    "Alex Mitkov builds custom, interactive websites for small businesses, with online booking, animation and AI-integrated workflows.",
   metadataBase: new URL("https://amitkov.dev"),
   openGraph: {
-    title: "Alex Mitkov — Backend / ML / Data Engineer",
+    title: "Alex Mitkov | Custom web experiences and AI workflows",
     description:
-      "Research rigor meets production engineering: data pipelines, ML systems, and clean software.",
+      "Custom web experiences. AI-integrated intelligent business workflows.",
     url: "https://amitkov.dev",
     siteName: "Alex Mitkov",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Mitkov — Backend / ML / Data Engineer",
+    title: "Alex Mitkov | Custom web experiences and AI workflows",
     description:
-      "Research rigor meets production engineering: data pipelines, ML systems, and clean software.",
+      "Custom web experiences. AI-integrated intelligent business workflows.",
   },
 };
 

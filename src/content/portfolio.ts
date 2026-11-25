@@ -1,11 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Bot,
   Briefcase,
+  CalendarCheck,
   Database,
   Github,
   GraduationCap,
   Linkedin,
   Mail,
+  MousePointerClick,
+  Palette,
   Sparkles,
 } from "lucide-react";
 
@@ -43,16 +47,79 @@ export type TimelineItem = {
 
 export const SITE = {
   name: "Alex Mitkov",
-  roleLine: "Fullstack and Backend Engineer • ML & Data Engineer • Quantum + AI",
-  headline:
-    "Full-Stack SWE, Data Engineering, and ML Systems",
-  summary: "Entry-level backend and MLOps/AI engineer and data scientist with experience shipping distributed systems, " +
-      " decision engines, and data pipelines in production-adjacent environments. " +
-      " Focuses on clear service, measurable performance, and writing tested, " +
-      " extensible and reproducible code comfortable navigating large codebases and contributing across teams.",
+  roleLine: "Web developer and AI engineer",
+  headline: "Custom web experiences. AI-integrated intelligent business workflows.",
+  summary:
+    "I design and build fast, interactive websites for small businesses: online booking, motion that feels alive, and AI features that save you hours. You get one person who handles design, code, launch and the automation behind it.",
   resumePath: "/api/resume",
-  locationLine: "Las Vegas, NV, USA • Open to remote",
+  locationLine: "Las Vegas, NV • Working with clients anywhere",
 } as const;
+
+export type Service = {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  points: string[];
+};
+
+export const SERVICES: Service[] = [
+  {
+    title: "Custom websites",
+    description:
+      "A site designed around your brand, built by hand and tuned to load fast on any phone.",
+    icon: Palette,
+    points: ["Custom design and copy", "Mobile-first layouts", "SEO and analytics setup"],
+  },
+  {
+    title: "Booking and payments",
+    description:
+      "Clients book, pay deposits and get reminders without a phone call.",
+    icon: CalendarCheck,
+    points: ["Online scheduling", "Deposits and memberships", "Calendar and email reminders"],
+  },
+  {
+    title: "Interactive experiences",
+    description:
+      "Animations, quizzes and tools that give visitors a reason to stay and come back.",
+    icon: MousePointerClick,
+    points: ["Scroll and hover motion", "Style finders and quizzes", "Click-to-edit content for owners"],
+  },
+  {
+    title: "AI workflows",
+    description:
+      "Assistants and automations that answer questions, sort requests and draft replies for you.",
+    icon: Bot,
+    points: ["Website chat assistants", "Lead and inbox triage", "Document and data pipelines"],
+  },
+];
+
+export type ClientProject = {
+  slug: string;
+  client: string;
+  title: string;
+  status: string;
+  description: string;
+  features: string[];
+  stack: string[];
+};
+
+export const CLIENT_WORK: ClientProject[] = [
+  {
+    slug: "marley-bergen-hair-rituals",
+    client: "Marley Bergen Hair Rituals",
+    title: "Wellness salon site for a Las Vegas hairstylist",
+    status: "Launching soon",
+    description:
+      "A feminine, wellness-led site for an independent stylist who focuses on hair treatments, care rituals, cuts and color.",
+    features: [
+      "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
+      "A three-question look finder and Swipe & Style, a swipe quiz that learns each visitor's taste",
+      "Before and after slider and a filterable lookbook that links each look to booking",
+      "Click-to-edit preview so the owner can change text, colors and fonts herself",
+    ],
+    stack: ["HTML", "CSS", "JavaScript", "Cloudflare Pages", "Cloudflare KV"],
+  },
+];
 
 export const SOCIALS: SocialLink[] = [
   { label: "GitHub", href: "https://github.com/amitkov-sudo", icon: Github },
@@ -124,7 +191,7 @@ export const PROJECTS: Project[] = [
       "Maven",
     ],
     impact:
-      "Engineered an event-driven banking-style flows: safe consumption of async messages, transactional balance updates, and coordinated HTTP side effects with testable Spring components.",
+      "Engineered event-driven banking flows: safe consumption of async messages, transactional balance updates, and coordinated HTTP side effects with testable Spring components.",
     links: {
       github: {
         label: "GitHub",
@@ -151,7 +218,7 @@ export const PROJECTS: Project[] = [
       "Feature engineering",
     ],
     impact:
-      "Engineered an end-to-end ML engineering: reproducible runs, operational thinking, and a credible path from training to deployment and monitoring.",
+      "End-to-end ML engineering: reproducible runs, operational thinking, and a credible path from training to deployment and monitoring.",
     links: {
       github: {
         label: "GitHub",
@@ -260,7 +327,7 @@ export const TIMELINE: TimelineItem[] = [
   {
     title: "Software & Machine Learning Projects",
     org: "Independent • Open Source",
-    timeframe: "2024 — Present",
+    timeframe: "2024 – Present",
     icon: Sparkles,
     bullets: [
       "Building production-style systems including data pipelines, ML workflows, and backend APIs.",
@@ -271,7 +338,7 @@ export const TIMELINE: TimelineItem[] = [
   {
   title: "AI • Monash University (MCS in Artificial Intelligence)",
   org: "Monash University",
-  timeframe: "2026 — Present",
+  timeframe: "2026 – Present",
   icon: Database,
   bullets: [
     "Incoming MCS student in Artificial Intelligence at Monash University (Remote, Offshore).",
@@ -282,12 +349,12 @@ export const TIMELINE: TimelineItem[] = [
   {
     title: "Quantum Computing • UC Merced (MS in Computational Chemistry)",
     org: "University of California, Merced",
-    timeframe: "2024 — 2026",
+    timeframe: "2024 – 2026",
     icon: GraduationCap,
     bullets: [
       "Worked on quantum computing, quantum control, quantum molecular simulations, and quantum error correction research with strong computational components.",
       "Built simulation workflows and analysis tooling; emphasized reproducibility and clear reporting.",
-      "Collaborated across disciplines; communicated results to both technical and non-technical audiences during seminars, poster conferenses, and group meetings.",
+      "Collaborated across disciplines; communicated results to both technical and non-technical audiences during seminars, poster conferences, and group meetings.",
     ],
   },
 ];

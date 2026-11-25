@@ -2,18 +2,18 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { ArrowDownRight, Download } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 import { SITE, SOCIALS } from "@/content/portfolio";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/cn";
 
-function scrollToProjects() {
-  const el = document.getElementById("projects");
+function scrollToId(id: string) {
+  const el = document.getElementById(id);
   if (!el) return;
   el.scrollIntoView({ behavior: "smooth", block: "start" });
-  history.replaceState(null, "", "#projects");
+  history.replaceState(null, "", `#${id}`);
 }
 
 export function Hero() {
@@ -37,8 +37,16 @@ export function Hero() {
             {SITE.locationLine}
           </p>
 
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {SITE.headline}
+          <p className="mt-6 text-sm font-medium tracking-wide text-white/60">
+            {SITE.name} · {SITE.roleLine}
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <span className="block bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">
+              Custom web experiences.
+            </span>
+            <span className="block bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
+              <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
+            </span>
           </h1>
           <p className="mt-5 text-base leading-8 text-white/70 sm:text-lg">
             {SITE.summary}
@@ -46,17 +54,23 @@ export function Hero() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
-              onClick={scrollToProjects}
+              onClick={() => scrollToId("contact")}
               className={cn(
                 "inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white text-black px-5 text-sm font-medium",
                 "hover:bg-white/90 active:bg-white/85 transition-colors",
                 "shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_10px_30px_-12px_rgba(0,0,0,0.65)]",
               )}
             >
-              View Projects <ArrowDownRight className="h-4 w-4" />
+              Start a project <ArrowRight className="h-4 w-4" />
             </button>
-            <ButtonLink href={SITE.resumePath} external variant="secondary">
-              Download Resume <Download className="h-4 w-4" />
+            <button
+              onClick={() => scrollToId("services")}
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white/5 px-5 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/10 transition-colors"
+            >
+              See services
+            </button>
+            <ButtonLink href={SITE.resumePath} external variant="ghost">
+              Resume <Download className="h-4 w-4" />
             </ButtonLink>
           </div>
 

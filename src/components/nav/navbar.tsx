@@ -96,15 +96,15 @@ export function Navbar() {
                 </a>
               ))}
             </div>
-            <ButtonLink
-              href={SITE.resumePath}
-              variant="secondary"
-              size="sm"
-              external
-              className="hidden sm:inline-flex"
+            <button
+              onClick={() => {
+                setActiveSection("contact");
+                scrollToId("contact");
+              }}
+              className="hidden sm:inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-black hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             >
-              Download Resume
-            </ButtonLink>
+              Start a project
+            </button>
 
             <button
               className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"

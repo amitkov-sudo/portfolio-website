@@ -68,11 +68,11 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Contact"
-          title="Let’s talk."
-          description="If you’d like to collaborate or talk roles, send a message directly here or reach me by email."
+          title="Tell me about your business."
+          description="Send a short note about what you want your site or workflow to do. I will reply with questions and next steps."
         />
 
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
           <Card className="p-6">
             <h3 className="text-sm font-semibold text-white">Message</h3>
 
@@ -114,7 +114,7 @@ export function Contact() {
                   className="min-h-[140px] w-full resize-y rounded-xl bg-white/5 px-4 py-3 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20"
                   value={state.message}
                   onChange={(e) => onChange("message", e.target.value)}
-                  placeholder="What can I help with?"
+                  placeholder="What do you do, and what should your website or workflow handle?"
                   required
                 />
               </label>
