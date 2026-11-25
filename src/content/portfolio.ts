@@ -186,12 +186,11 @@ export const CLIENT_WORK: ClientProject[] = [
     aiTool: {
       name: "Swipe & Style",
       description:
-        "An AI style matcher for Marley's clients. Visitors swipe through haircut photos, and a model in the browser learns each visitor's taste from every swipe. After eight swipes, the model suggests a look and a service to book.",
+        "A proprietary AI style matcher for Marley's clients. Visitors swipe through haircut photos, and the tool learns each visitor's taste, then suggests a look and the service to book.",
       points: [
-        "Online logistic regression over 20 hand-tagged style features, one update per swipe",
-        "Active learning: the next photo is the one the model is least sure about",
+        "Personal style match from a few swipes",
         "Sends each client's matches to Marley before the appointment",
-        "Anonymous style counts show Marley which looks clients love, with no names or device IDs",
+        "Shows Marley which looks clients love, with no names or device IDs",
       ],
     },
     stack: ["HTML", "CSS", "JavaScript", "Machine learning", "Cloudflare Pages", "Cloudflare KV"],
