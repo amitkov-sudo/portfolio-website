@@ -196,11 +196,15 @@ export const SERVICES: Service[] = [
     points: ["Custom design and copy", "Mobile-first layouts", "SEO and analytics setup"],
   },
   {
-    title: "Booking and payments",
+    title: "Business systems",
     description:
-      "Clients book, pay deposits and get reminders without a phone call.",
+      "Booking, payments and client records in one connected system that runs the front desk around the clock and builds recurring revenue.",
     icon: CalendarCheck,
-    points: ["Online scheduling", "Deposits and memberships", "Calendar and email reminders"],
+    points: [
+      "Scheduling, deposits and memberships",
+      "Client portals and customer records",
+      "Integrations with calendars, email and payment providers",
+    ],
   },
   {
     title: "Interactive experiences",
