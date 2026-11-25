@@ -57,7 +57,7 @@ export const SITE = {
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV",
   priceRange: "$1,500 to $5,000+",
-  pricing: "Prices depend on the complexity of the build.",
+  pricing: "Quote prices depend on a variety of things such as project complexity and timeline.",
   serviceArea: "Website builds are available to US residents only.",
 } as const;
 

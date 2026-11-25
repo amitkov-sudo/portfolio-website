@@ -24,7 +24,7 @@ export function Pricing() {
               </span>
             </p>
             <p className="mt-3 text-sm leading-7 text-white/70">
-              {SITE.pricing} Alex Mitkov sends each quote in writing before work starts.
+              {SITE.pricing}
             </p>
             <p className="mt-2 flex items-center gap-2 text-xs font-medium text-white/60">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-400" aria-hidden="true" />
