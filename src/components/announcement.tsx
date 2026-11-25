@@ -1,7 +1,7 @@
 import { michroma } from "@/lib/fonts";
 
-/* Deep-space strip under the nav: twinkling stars, a nebula glow, an
-   occasional shooting star and a small rocket that crosses the strip.
+/* Deep-space strip under the nav: twinkling stars, a nebula glow and an
+   occasional shooting star.
    It stays dark in both themes. Motion stops for reduced-motion visitors. */
 
 function seeded(seed: number) {
@@ -45,18 +45,8 @@ export function Announcement() {
           />
         ))}
         <span className="space-shoot absolute left-[70%] top-[10%] h-px w-16 bg-gradient-to-r from-transparent via-[#fff] to-transparent" />
-        <svg
-          viewBox="0 0 40 16"
-          className="space-rocket absolute top-1/2 h-3.5 w-9 -translate-y-1/2"
-        >
-          <path d="M0 8 L9 5 L9 11 Z" fill="#fb923c" opacity="0.9" />
-          <path d="M3 8 L9 6.4 L9 9.6 Z" fill="#fde68a" />
-          <path d="M9 5 H28 C33 5 37 6.5 40 8 C37 9.5 33 11 28 11 H9 Z" fill="#e2e8f0" />
-          <path d="M12 5 L8 1 H12 L16 5 Z M12 11 L8 15 H12 L16 11 Z" fill="#94a3b8" />
-          <circle cx="29" cy="8" r="1.6" fill="#38bdf8" />
-        </svg>
       </div>
-      <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-6 py-2.5">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-6 py-4 sm:py-5">
         <span className="relative flex h-2 w-2" aria-hidden="true">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
