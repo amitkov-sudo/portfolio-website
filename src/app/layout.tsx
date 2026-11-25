@@ -4,6 +4,7 @@ import "./globals.css";
 import { ActiveSectionProvider } from "@/components/active-section";
 import { Navbar } from "@/components/nav/navbar";
 import { Footer } from "@/components/footer";
+import { Intro } from "@/components/intro";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,13 +51,14 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}",
+              "try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');if(sessionStorage.getItem('intro-seen')==='1')document.documentElement.classList.add('no-intro')}catch(e){}",
           }}
         />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
+        <Intro />
         <ActiveSectionProvider>
           <Navbar />
           {children}
