@@ -54,7 +54,7 @@ export const SITE = {
   headline: "AI research and engineering.",
   tagline: "Custom web experiences. AI-integrated intelligent business workflows.",
   summary:
-    "At Algoverse I research whether fine-tuning can teach language models to act on errors they already detect, with a focus on AI safety. I also design and build interactive websites for small businesses, with online booking, motion and AI features that save owners hours.",
+    "I study how language models catch their own errors. I test training methods that make them act on it. I build custom websites for small businesses. I add booking, motion and AI that save owners hours.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV • Remote research and client work",
   pricing: "Prices depend on the complexity of the build.",
