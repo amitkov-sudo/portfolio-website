@@ -14,7 +14,7 @@ export function Research() {
     <section id="research" className="scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Research"
+          eyebrow="Work"
           title="Research"
           description="AI Safety and Alignment & Computational Science Foundations"
         />
