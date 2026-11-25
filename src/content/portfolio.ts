@@ -245,7 +245,7 @@ export const CLIENT_WORK: ClientProject[] = [
     title: "Wellness-Forward Hair Salon",
     status: "Launching soon",
     description:
-      "A wellness-led site for an independent stylist who focuses on hair treatments, care rituals, cuts and color.",
+      "Booking and marketing site for a Las Vegas hair studio, with online booking, a lookbook and an AI style matcher.",
     features: [
       "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
       "A three-question look finder that matches each visitor to a service",
@@ -255,11 +255,11 @@ export const CLIENT_WORK: ClientProject[] = [
     aiTool: {
       name: "Swipe & Style",
       description:
-        "A proprietary AI style matcher for Marley's clients. Visitors swipe through haircut photos, and the tool learns each visitor's taste, then suggests a look and the service to book.",
+        "Proprietary AI style matcher. Learns each visitor's taste from a few swipes through haircut photos, then suggests a look and the matching service to book.",
       points: [
-        "Personal style match from a few swipes",
-        "Sends each client's matches to Marley before the appointment",
-        "Shows Marley which looks clients love, with no names or device IDs",
+        "Matches a personal style in a few swipes",
+        "Sends each client's matches to the stylist before the appointment",
+        "Reports which looks clients love, with no names or device IDs",
       ],
     },
     stack: ["HTML", "CSS", "JavaScript", "Machine learning", "Cloudflare Pages", "Cloudflare KV"],
