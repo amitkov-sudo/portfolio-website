@@ -95,23 +95,23 @@ body {
 
 /* Opening intro (components/intro.tsx). */
 .no-intro #intro { display: none; }
-.intro { transition: opacity 0.38s ease, transform 0.38s ease; cursor: pointer; }
+.intro { transition: opacity 0.3s ease, transform 0.3s ease; cursor: pointer; }
 .intro-leave { opacity: 0; transform: scale(1.04); pointer-events: none; }
 .intro-link {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: intro-draw 0.45s ease-out forwards;
+  animation: intro-draw 0.3s ease-out forwards;
 }
 .intro-node {
   fill: var(--color-white);
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
-  animation: intro-pop 0.35s cubic-bezier(0.2, 1.4, 0.4, 1) forwards;
+  animation: intro-pop 0.25s cubic-bezier(0.2, 1.4, 0.4, 1) forwards;
 }
 .intro-name {
   opacity: 0;
-  animation: intro-rise 0.4s ease-out 0.38s forwards;
+  animation: intro-rise 0.35s ease-out 0.12s forwards;
 }
 @keyframes intro-draw { to { stroke-dashoffset: 0; } }
 @keyframes intro-pop {
@@ -119,8 +119,8 @@ body {
   100% { opacity: 1; transform: scale(1); }
 }
 @keyframes intro-rise {
-  0% { opacity: 0; transform: translateY(8px); filter: blur(4px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  0% { opacity: 0; transform: translateY(10px) scale(0.96); filter: blur(6px); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 @media (prefers-reduced-motion: reduce) {
   #intro { display: none; }
