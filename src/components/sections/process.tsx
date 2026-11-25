@@ -21,7 +21,6 @@ export function Process() {
         <SectionHeading
           eyebrow="Process"
           title="From first call to launch."
-          description="Alex Mitkov stays the single point of contact through all four steps."
         />
 
         <div className="relative">

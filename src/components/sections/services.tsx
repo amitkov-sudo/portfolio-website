@@ -15,7 +15,6 @@ export function Services() {
         <SectionHeading
           eyebrow="Services"
           title="Building Intelligent Solutions to Real-World Problems"
-          description="Websites and AI workflows for small businesses. Pick one service or combine several in one build."
         />
 
         <div className="grid gap-4 sm:grid-cols-2">

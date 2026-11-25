@@ -101,7 +101,6 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Request a quote."
-          description="Share the business, the budget and what the site or workflow should do. Research teams can pick the second topic."
         />
 
         <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
