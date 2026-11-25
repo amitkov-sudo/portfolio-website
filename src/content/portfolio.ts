@@ -75,7 +75,7 @@ export type ResearchItem = {
 export const RESEARCH: ResearchItem[] = [
   {
     slug: "algoverse-self-correction",
-    title: "AI Capability Research, Computational Scientist",
+    title: "Junior AI Researcher",
     org: "Algoverse",
     timeframe: "Sept 2026 – Present",
     status: "Paper incoming",
@@ -91,7 +91,7 @@ export const RESEARCH: ResearchItem[] = [
   },
   {
     slug: "ai-evaluation",
-    title: "Expert AI evaluation tasks",
+    title: "AI Capability Research, Computational Scientist",
     org: "Mercor",
     timeframe: "2026",
     icon: ClipboardCheck,
@@ -390,7 +390,7 @@ export const SKILLS: SkillGroup[] = [
 
 export const TIMELINE: TimelineItem[] = [
   {
-    title: "AI Capability Research, Computational Scientist",
+    title: "Junior AI Researcher",
     org: "Algoverse",
     timeframe: "Sept 2026 – Present",
     icon: FlaskConical,
