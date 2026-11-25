@@ -247,7 +247,7 @@ export const CLIENT_WORK: ClientProject[] = [
     description:
       "Wellness-Centered hair studio nestled in the beautiful Las Vegas valley, offering restorative hair rituals, precision cuts and luminous color, plus in-home and hotel blowouts.",
     features: [
-      "End-to-end online booking for studio, in-home and hotel appointments",
+      "End-to-end online booking for studio, in-home and hotel hair appointments",
       "Guided service discovery that matches each visitor to the right treatment",
       "Interactive lookbook and before-and-after gallery tied to booking",
       "Owner-managed content editing with no developer required",
