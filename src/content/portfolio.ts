@@ -2,7 +2,6 @@ import type { LucideIcon } from "lucide-react";
 import {
   Atom,
   Bot,
-  Brain,
   Briefcase,
   CalendarCheck,
   ClipboardCheck,
@@ -55,10 +54,10 @@ export const SITE = {
   headline: "AI research and engineering.",
   tagline: "Custom web experiences. AI-integrated intelligent business workflows.",
   summary:
-    "I study how reinforcement learning shapes model behavior as an AI Research Fellow at Algoverse, with a focus on AI safety. I also design and build interactive websites for small businesses, with online booking, motion and AI features that save owners hours.",
+    "At Algoverse I research whether fine-tuning can teach language models to act on errors they already detect, with a focus on AI safety. I also design and build interactive websites for small businesses, with online booking, motion and AI features that save owners hours.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV • Remote research and client work",
-  pricing: "Per website project, depending on scope.",
+  pricing: "Prices depend on the complexity of the build.",
 } as const;
 
 export type ResearchItem = {
@@ -75,38 +74,25 @@ export type ResearchItem = {
 
 export const RESEARCH: ResearchItem[] = [
   {
-    slug: "algoverse-fellowship",
-    title: "AI Research Fellow",
+    slug: "algoverse-self-correction",
+    title: "AI Capability Research, Computational Scientist",
     org: "Algoverse",
     timeframe: "Sept 2026 – Present",
+    status: "Paper incoming",
     icon: FlaskConical,
     summary:
-      "I work on a four-person team, mentored by an AI safety researcher, studying how RL post-training changes model behavior and safety.",
+      "Language models often register that their own reasoning has gone wrong, then keep going anyway. I study whether fine-tuning can teach a model to act on that signal, and to act only when the step is wrong.",
     points: [
-      "Proposed research directions and ran feasibility pilots on small open models",
-      "Team paper aimed at ICLR 2027 workshops",
+      "Measures the gap between what a model knows is wrong and what it fixes",
+      "Compares GFlowNet-style fine-tuning with GRPO on real fixes against false alarms",
+      "Extends the test to safety, where a false alarm means refusing a safe request",
     ],
-    tags: ["Reinforcement learning", "Post-training", "AI safety"],
-  },
-  {
-    slug: "reward-hacking-routes",
-    title: "Does reward hacking look the same inside a model, however it was learned?",
-    org: "Independent research question",
-    timeframe: "2026",
-    status: "Proposal",
-    icon: Brain,
-    summary:
-      "A model can learn to game its tests through prompting, supervised fine-tuning or RL. I ask whether those routes leave the same internal signature, and whether a detector trained on one route catches the others.",
-    points: [
-      "Linear probes and crosscoder features on Qwen3-4B, compared across prompted, SFT and GRPO-trained models",
-      "Clean control runs and a KL-from-base axis so the routes compare fairly",
-    ],
-    tags: ["Interpretability", "Reward hacking", "GRPO", "Probes", "Crosscoders"],
+    tags: ["Reinforcement learning", "Self-correction", "GFlowNets", "GRPO", "AI safety"],
   },
   {
     slug: "ai-evaluation",
     title: "Expert AI evaluation tasks",
-    org: "Mercor (contract)",
+    org: "Mercor",
     timeframe: "2026",
     icon: ClipboardCheck,
     summary:
@@ -404,13 +390,13 @@ export const SKILLS: SkillGroup[] = [
 
 export const TIMELINE: TimelineItem[] = [
   {
-    title: "AI Research Fellow",
+    title: "AI Capability Research, Computational Scientist",
     org: "Algoverse",
     timeframe: "Sept 2026 – Present",
     icon: FlaskConical,
     bullets: [
-      "Research on RL post-training and AI safety in a four-person team with an AI safety mentor.",
-      "Team paper aimed at ICLR 2027 workshops.",
+      "Research on whether fine-tuning teaches language models to act on errors they already detect, in a four-person team with an AI safety mentor.",
+      "Paper incoming.",
     ],
   },
   {

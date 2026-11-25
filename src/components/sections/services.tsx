@@ -56,7 +56,7 @@ export function Services() {
               Pricing
             </p>
             <p className="mt-2 text-lg font-semibold tracking-tight text-white">
-              $1,500 to $4,000
+              $1,500 to $4,000+
             </p>
             <p className="mt-1 text-sm text-white/70">{SITE.pricing}</p>
           </div>
