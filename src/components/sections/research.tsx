@@ -15,8 +15,8 @@ export function Research() {
       <Container>
         <SectionHeading
           eyebrow="Research"
-          title="AI Safety and Alignment"
-          description="Post-training methods for LLMs and Computational Science"
+          title="Research"
+          description="AI Safety and Alignment & Computational Science Foundations"
         />
 
         <div className="grid gap-4 md:grid-cols-2">
