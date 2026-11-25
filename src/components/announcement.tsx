@@ -62,9 +62,16 @@ export function Announcement() {
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
         </span>
         <span
-          className={`${michroma.className} hue-drift bg-gradient-to-r from-[#c7d2ff] via-[#b8e6fe] to-[#a4f4cf] bg-clip-text whitespace-nowrap text-[10px] uppercase tracking-[0.1em] text-transparent sm:text-xs sm:tracking-[0.2em]`}
+          className={`${michroma.className} text-center text-[10px] uppercase leading-relaxed tracking-[0.1em] text-[#cbd5e1] sm:text-xs sm:tracking-[0.2em]`}
         >
-          Something new is launching soon
+          Something new is entering{" "}
+          <span className="text-[#7dd3fc] [text-shadow:0_0_10px_rgba(56,189,248,0.75),0_0_22px_rgba(56,189,248,0.35)]">
+            orbit
+          </span>
+          .{" "}
+          <span className="whitespace-nowrap text-[#fb7185] [text-shadow:0_0_10px_rgba(244,63,94,0.55)]">
+            Stay tuned!
+          </span>
         </span>
       </div>
     </div>
