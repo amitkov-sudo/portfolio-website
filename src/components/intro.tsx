@@ -2,7 +2,11 @@
 
 import * as React from "react";
 
+import { Michroma } from "next/font/google";
+
 import { playRocket } from "@/lib/rocket-sound";
+
+const michroma = Michroma({ weight: "400", subsets: ["latin"], display: "swap" });
 
 /* Fast opening screen: a neural network draws itself across the whole
    screen, radiating out from the name, then the overlay lifts. Plays once per visit. The rocket whoosh plays
@@ -144,13 +148,13 @@ export function Intro() {
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--background)_0%,color-mix(in_oklab,var(--background)_70%,transparent)_28%,transparent_60%)]"
       />
-      <div className="relative px-6 text-center">
-        <p className="intro-name text-5xl font-semibold tracking-tight sm:text-7xl lg:text-8xl">
+      <div className={`relative px-6 text-center ${michroma.className}`}>
+        <p className="intro-name text-3xl leading-tight sm:text-5xl lg:text-6xl">
           <span className="hue-drift bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
             Alex Mitkov
           </span>
         </p>
-        <p className="intro-tagline mt-4 text-base font-medium tracking-tight text-white/70 sm:text-xl">
+        <p className="intro-tagline mt-5 text-[10px] tracking-wide text-white/70 sm:text-xs lg:text-sm">
           <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
         </p>
       </div>

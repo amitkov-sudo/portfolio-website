@@ -113,7 +113,7 @@ export function NeuralField() {
     }
 
     function isDark() {
-      return document.documentElement.classList.contains("dark");
+      return !document.documentElement.classList.contains("light");
     }
 
     function frame(now: number) {

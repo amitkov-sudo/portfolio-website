@@ -1,26 +1,9 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(:root:not(.light), :root:not(.light) *));
 
-/* Light theme (default): soft paper background with ink text.
-   The components use white and black utilities, so the light theme swaps
-   those two colors and deepens the pale accents to keep contrast. */
+/* Dark theme (default): the original look. */
 :root {
-  color-scheme: light;
-  --background: #f4f2ee;
-  --foreground: #16181d;
-  --color-white: #16181d;
-  --color-black: #f4f2ee;
-  --color-indigo-200: #4338ca;
-  --color-sky-200: #0369a1;
-  --color-emerald-200: #047857;
-  --color-emerald-300: #059669;
-  --color-pink-200: #be185d;
-  --color-red-300: #b91c1c;
-}
-
-/* Dark theme: the original look. */
-:root.dark {
   color-scheme: dark;
   --background: #050607;
   --foreground: #f3f4f6;
@@ -32,6 +15,23 @@
   --color-emerald-300: #5ee9b5;
   --color-pink-200: #fccee8;
   --color-red-300: #ffa2a2;
+}
+
+/* Light theme: soft paper background with ink text. The components use
+   white and black utilities, so the light theme swaps those two colors and
+   deepens the pale accents to keep contrast. */
+:root.light {
+  color-scheme: light;
+  --background: #f4f2ee;
+  --foreground: #16181d;
+  --color-white: #16181d;
+  --color-black: #f4f2ee;
+  --color-indigo-200: #4338ca;
+  --color-sky-200: #0369a1;
+  --color-emerald-200: #047857;
+  --color-emerald-300: #059669;
+  --color-pink-200: #be185d;
+  --color-red-300: #b91c1c;
 }
 
 @theme inline {

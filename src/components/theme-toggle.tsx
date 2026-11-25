@@ -1,40 +1,53 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
+type Theme = "dark" | "light";
+
+/* Two-option switch: Light and Dark. Dark is the default. */
 export function ThemeToggle({ className }: { className?: string }) {
-  const [dark, setDark] = React.useState(false);
+  const [theme, setTheme] = React.useState<Theme>("dark");
 
   React.useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
+    setTheme(document.documentElement.classList.contains("light") ? "light" : "dark");
   }, []);
 
-  function toggle() {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle("dark", next);
+  function choose(next: Theme) {
+    setTheme(next);
+    document.documentElement.classList.toggle("light", next === "light");
     try {
-      localStorage.setItem("theme", next ? "dark" : "light");
+      localStorage.setItem("theme", next);
     } catch {
       /* private mode: the choice lasts for this visit only */
     }
   }
 
   return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-      title={dark ? "Light theme" : "Dark theme"}
+    <div
+      role="radiogroup"
+      aria-label="Color theme"
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-full text-white/70 ring-1 ring-white/10 hover:bg-white/5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
+        "inline-flex h-9 items-center rounded-full bg-white/5 p-1 text-xs font-medium ring-1 ring-white/10",
         className,
       )}
     >
-      {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-    </button>
+      {(["light", "dark"] as const).map((t) => (
+        <button
+          key={t}
+          type="button"
+          role="radio"
+          aria-checked={theme === t}
+          onClick={() => choose(t)}
+          className={cn(
+            "h-7 rounded-full px-3 capitalize transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
+            theme === t ? "bg-white text-black" : "text-white/60 hover:text-white",
+          )}
+        >
+          {t}
+        </button>
+      ))}
+    </div>
   );
 }
