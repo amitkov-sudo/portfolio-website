@@ -15,9 +15,25 @@ function scrollToId(id: string) {
 }
 
 export function Hero() {
+  const ref = React.useRef<HTMLElement>(null);
+
+  function onPointerMove(e: React.PointerEvent<HTMLElement>) {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--hx", `${e.clientX - r.left}px`);
+    el.style.setProperty("--hy", `${e.clientY - r.top}px`);
+  }
+
   return (
-    <section id="top" className="relative overflow-hidden pt-16">
+    <section
+      id="top"
+      ref={ref}
+      onPointerMove={onPointerMove}
+      className="group/hero relative overflow-hidden pt-16"
+    >
       <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover/hero:opacity-100 bg-[radial-gradient(520px_circle_at_var(--hx,50%)_var(--hy,30%),rgba(99,102,241,0.14),rgba(56,189,248,0.06)_45%,transparent_70%)]" />
         <div className="absolute -top-48 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.10),rgba(0,0,0,0)_60%)] blur-2xl" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-background/75 via-70% to-background to-100%" />
       </div>
@@ -37,7 +53,7 @@ export function Hero() {
             <span className="block bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">
               {SITE.headline}
             </span>
-            <span className="block bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
+            <span className="hue-drift block bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
               <span className="whitespace-nowrap">AI-integrated</span> intelligent business
               workflows.
             </span>

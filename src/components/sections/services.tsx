@@ -29,10 +29,12 @@ export function Services() {
             >
               <Card className="h-full p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="font-mono text-xs text-white/45">
+                  <span className="bg-gradient-to-r from-indigo-200 to-sky-200 bg-clip-text font-mono text-xs font-semibold text-transparent">
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <s.icon className="h-5 w-5 text-white/60" />
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/25 via-sky-400/15 to-emerald-400/20 ring-1 ring-white/10 transition-transform duration-300 group-hover/card:-translate-y-0.5 group-hover/card:rotate-6 group-hover/card:scale-110">
+                    <s.icon className="h-5 w-5 text-white" />
+                  </span>
                 </div>
                 <h3 className="mt-4 text-lg font-semibold tracking-tight text-white">
                   {s.title}
