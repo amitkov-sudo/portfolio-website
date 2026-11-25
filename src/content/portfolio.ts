@@ -245,7 +245,7 @@ export const CLIENT_WORK: ClientProject[] = [
     title: "Wellness-Forward Hair Salon",
     status: "Launching soon",
     description:
-      "Booking and marketing site for a Las Vegas hair studio, with online booking, a lookbook and an AI style matcher.",
+      "Wellness-Centered hair studio nestled in the beautiful Las Vegas valley, offering restorative hair rituals, precision cuts and luminous color, plus in-home and hotel blowouts.",
     features: [
       "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
       "A three-question look finder that matches each visitor to a service",
