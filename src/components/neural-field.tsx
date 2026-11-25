@@ -22,6 +22,97 @@ type Pulse = { from: number; to: number; t: number; run: number };
 
 const LINK = 175; // link distance in px at depth 1
 
+let audio: AudioContext | null = null;
+
+/* Quiet engine whir for a visitor's click: a low hum that spins up and
+   settles, with a soft rumble and a breath of air. Runs inside the click,
+   so browsers allow it. */
+function blip(pitch: number) {
+  try {
+    const AC =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return;
+    audio = audio || new AC();
+    if (audio.state === "suspended") void audio.resume();
+    const ctx = audio;
+    const t = ctx.currentTime + 0.005;
+    const end = t + 0.55;
+
+    const out = ctx.createGain();
+    out.gain.setValueAtTime(0.0001, t);
+    out.gain.exponentialRampToValueAtTime(0.14, t + 0.06);
+    out.gain.setValueAtTime(0.14, t + 0.2);
+    out.gain.exponentialRampToValueAtTime(0.0001, end);
+    out.connect(ctx.destination);
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.Q.value = 2;
+    filter.frequency.setValueAtTime(320, t);
+    filter.frequency.exponentialRampToValueAtTime(900, t + 0.22);
+    filter.frequency.exponentialRampToValueAtTime(380, end);
+
+    // Rumble: a fast tremolo on the hum.
+    const body = ctx.createGain();
+    body.gain.value = 0.75;
+    const lfo = ctx.createOscillator();
+    lfo.frequency.value = 32;
+    const lfoDepth = ctx.createGain();
+    lfoDepth.gain.value = 0.25;
+    lfo.connect(lfoDepth);
+    lfoDepth.connect(body.gain);
+    body.connect(filter);
+    filter.connect(out);
+
+    const base = 52 * pitch;
+    const hum = ctx.createOscillator();
+    hum.type = "sawtooth";
+    hum.frequency.setValueAtTime(base, t);
+    hum.frequency.exponentialRampToValueAtTime(base * 1.9, t + 0.22);
+    hum.frequency.exponentialRampToValueAtTime(base * 1.6, end);
+    hum.connect(body);
+
+    const sub = ctx.createOscillator();
+    sub.type = "sine";
+    sub.frequency.setValueAtTime(base / 2, t);
+    sub.frequency.exponentialRampToValueAtTime(base * 0.95, t + 0.22);
+    const subGain = ctx.createGain();
+    subGain.gain.value = 0.9;
+    sub.connect(subGain);
+    subGain.connect(out);
+
+    // Air: filtered noise that swells with the spin-up.
+    const len = Math.floor(ctx.sampleRate * 0.55);
+    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+    const noise = ctx.createBufferSource();
+    noise.buffer = buf;
+    const band = ctx.createBiquadFilter();
+    band.type = "bandpass";
+    band.Q.value = 0.8;
+    band.frequency.setValueAtTime(600, t);
+    band.frequency.exponentialRampToValueAtTime(1500, t + 0.22);
+    const air = ctx.createGain();
+    air.gain.setValueAtTime(0.0001, t);
+    air.gain.exponentialRampToValueAtTime(0.06, t + 0.18);
+    air.gain.exponentialRampToValueAtTime(0.0001, end);
+    noise.connect(band);
+    band.connect(air);
+    air.connect(out);
+
+    [hum, sub, lfo].forEach((o) => {
+      o.start(t);
+      o.stop(end + 0.05);
+    });
+    noise.start(t);
+    noise.stop(end);
+  } catch {
+    /* sound is optional */
+  }
+}
+
 export function NeuralField() {
   const wrapRef = React.useRef<HTMLDivElement>(null);
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
@@ -260,6 +351,8 @@ export function NeuralField() {
     };
     const onDown = (e: PointerEvent) => {
       const p = local(e);
+      // Higher pitch toward the right edge, lower toward the left.
+      blip(0.9 + 0.25 * Math.min(1, Math.max(0, p.x / Math.max(w, 1))));
       fire(p.x, p.y);
     };
 
