@@ -53,7 +53,7 @@ export const SITE = {
   roleLine: "Web development and applied AI",
   headline: "Custom web experiences.",
   summary:
-    "Alex Mitkov designs and builds websites, booking systems and AI tools for small businesses. Every project starts with a written scope and quote.",
+    "Web development, booking systems, AI integration, research and model evaluation.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV",
   priceRange: "$1,500 to $5,000+",
