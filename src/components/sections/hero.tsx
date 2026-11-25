@@ -22,7 +22,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.20),rgba(0,0,0,0)_60%)] blur-2xl" />
         <div className="absolute -top-24 left-1/2 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.14),rgba(0,0,0,0)_65%)] blur-2xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.75)_70%,rgba(0,0,0,1)_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-background/75 via-70% to-background to-100%" />
       </div>
 
       <Container className="relative py-14 sm:py-20">

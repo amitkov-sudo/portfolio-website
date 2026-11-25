@@ -1,12 +1,37 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light theme (default): soft paper background with ink text.
+   The components use white and black utilities, so the light theme swaps
+   those two colors and deepens the pale accents to keep contrast. */
 :root {
+  color-scheme: light;
+  --background: #f4f2ee;
+  --foreground: #16181d;
+  --color-white: #16181d;
+  --color-black: #f4f2ee;
+  --color-indigo-200: #4338ca;
+  --color-sky-200: #0369a1;
+  --color-emerald-200: #047857;
+  --color-emerald-300: #059669;
+  --color-pink-200: #be185d;
+  --color-red-300: #b91c1c;
+}
+
+/* Dark theme: the original look. */
+:root.dark {
   color-scheme: dark;
   --background: #050607;
   --foreground: #f3f4f6;
-  --muted: rgba(255, 255, 255, 0.70);
-  --muted-2: rgba(255, 255, 255, 0.55);
-  --ring: rgba(255, 255, 255, 0.14);
+  --color-white: #fff;
+  --color-black: #000;
+  --color-indigo-200: #c7d2ff;
+  --color-sky-200: #b8e6fe;
+  --color-emerald-200: #a4f4cf;
+  --color-emerald-300: #5ee9b5;
+  --color-pink-200: #fccee8;
+  --color-red-300: #ffa2a2;
 }
 
 @theme inline {
@@ -24,9 +49,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background: rgba(99, 102, 241, 0.35);
 }
-
