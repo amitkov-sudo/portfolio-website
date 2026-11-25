@@ -45,8 +45,9 @@ export function Hero() {
           transition={{ type: "spring", stiffness: 220, damping: 28 }}
           className="max-w-4xl"
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
-            {SITE.name} · {SITE.roleLine} · {SITE.locationLine}
+          <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-medium text-white/75 ring-1 ring-white/10">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/90" />
+            {SITE.locationLine}
           </p>
 
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">

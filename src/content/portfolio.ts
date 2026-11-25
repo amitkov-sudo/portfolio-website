@@ -55,7 +55,7 @@ export const SITE = {
   summary:
     "Alex Mitkov designs and builds websites, booking systems and AI tools for small businesses. Every project starts with a written scope and quote.",
   resumePath: "/api/resume",
-  locationLine: "Las Vegas, Nevada",
+  locationLine: "Las Vegas, NV",
   priceRange: "$1,500 to $4,000+",
   pricing: "Prices depend on the complexity of the build.",
 } as const;
