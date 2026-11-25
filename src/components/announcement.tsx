@@ -1,7 +1,6 @@
 import { michroma } from "@/lib/fonts";
 
-/* Deep-space strip under the nav: twinkling stars, a nebula glow and an
-   occasional shooting star.
+/* Deep-space strip under the nav: twinkling stars over a nebula glow.
    Motion stops for reduced-motion visitors. */
 
 function seeded(seed: number) {
@@ -44,7 +43,6 @@ export function Announcement() {
             }}
           />
         ))}
-        <span className="space-shoot absolute left-[70%] top-[10%] h-px w-16 bg-gradient-to-r from-transparent via-[#fff] to-transparent" />
       </div>
       <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-6 py-4 sm:py-5">
         <span className="relative flex h-2 w-2" aria-hidden="true">

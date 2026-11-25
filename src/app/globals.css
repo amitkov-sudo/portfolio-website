@@ -117,12 +117,6 @@ body {
   50% { opacity: 0.95; }
 }
 .space-star { opacity: 0.4; animation: space-twinkle 3s ease-in-out infinite; }
-@keyframes space-shoot {
-  0%, 82% { opacity: 0; transform: translate(0, 0) rotate(-18deg); }
-  86% { opacity: 1; }
-  96%, 100% { opacity: 0; transform: translate(-220px, 70px) rotate(-18deg); }
-}
-.space-shoot { opacity: 0; animation: space-shoot 7s ease-out infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .space-star, .space-shoot { animation: none; }
+  .space-star { animation: none; }
 }
