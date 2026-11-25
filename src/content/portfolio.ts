@@ -140,7 +140,7 @@ export const RESEARCH: ResearchItem[] = [
   {
     slug: "algoverse-self-correction",
     title: "Junior AI Researcher",
-    org: "Algoverse",
+    org: "Algoverse AI",
     timeframe: "Sept 2026 – Present",
     status: "Paper incoming",
     icon: FlaskConical,
@@ -459,7 +459,7 @@ export const SKILLS: SkillGroup[] = [
 export const TIMELINE: TimelineItem[] = [
   {
     title: "Junior AI Researcher",
-    org: "Algoverse",
+    org: "Algoverse AI",
     timeframe: "Sept 2026 – Present",
     icon: FlaskConical,
     bullets: [
