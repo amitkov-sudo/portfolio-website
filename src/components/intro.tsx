@@ -144,11 +144,16 @@ export function Intro() {
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--background)_0%,color-mix(in_oklab,var(--background)_70%,transparent)_28%,transparent_60%)]"
       />
-      <p className="intro-name relative text-center text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
-        <span className="hue-drift bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
-          Alex Mitkov
-        </span>
-      </p>
+      <div className="relative px-6 text-center">
+        <p className="intro-name text-5xl font-semibold tracking-tight sm:text-7xl lg:text-8xl">
+          <span className="hue-drift bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
+            Alex Mitkov
+          </span>
+        </p>
+        <p className="intro-tagline mt-4 text-base font-medium tracking-tight text-white/70 sm:text-xl">
+          <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
+        </p>
+      </div>
     </div>
   );
 }
