@@ -16,7 +16,7 @@ export function ClientWork() {
         <SectionHeading
           eyebrow="Client work"
           title="Recent builds."
-          description="Sites I design and build with owners, from first sketch to launch."
+          description="Designs and builds sites with owners, from first sketch to launch."
         />
 
         <div className="space-y-4">

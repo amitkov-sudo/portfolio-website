@@ -9,8 +9,8 @@ export function Experience() {
       <Container>
         <SectionHeading
           eyebrow="Experience / Education"
-          title="Quick snapshot of my experience."
-          description="A quick view of the work, study, and focus areas that shaped my engineering practice."
+          title="Experience and education at a glance."
+          description="Roles, research programs and degrees."
         />
 
         <div className="relative">

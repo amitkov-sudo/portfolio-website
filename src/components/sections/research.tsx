@@ -14,8 +14,8 @@ export function Research() {
       <Container>
         <SectionHeading
           eyebrow="Research"
-          title="How training shapes model behavior."
-          description="I study reinforcement learning, post-training and AI safety, and I bring a background in quantum and computational chemistry research."
+          title="Reinforcement learning, self-correction and AI safety."
+          description="Studies post-training methods for language models, after graduate research in quantum computing and computational chemistry."
         />
 
         <div className="grid gap-4 md:grid-cols-2">

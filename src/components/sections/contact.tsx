@@ -24,12 +24,12 @@ const TOPICS: { id: Topic; label: string; placeholder: string }[] = [
   {
     id: "project",
     label: "Start a project",
-    placeholder: "What do you do, and what should your website or workflow handle?",
+    placeholder: "Describe the business and what the website or workflow should handle.",
   },
   {
     id: "research",
     label: "Research and roles",
-    placeholder: "Tell me about the research, collaboration or role you have in mind.",
+    placeholder: "Describe the research, collaboration or role.",
   },
 ];
 
@@ -84,8 +84,8 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Contact"
-          title="Let’s work together."
-          description="Pick a topic and send a short note. Clients: tell me what your site or workflow should do. Researchers and teams: tell me about the project or role."
+          title="Start a conversation."
+          description="Pick a topic and send a short note. Clients: describe what the site or workflow should do. Researchers and teams: describe the project or role."
         />
 
         <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
@@ -120,7 +120,7 @@ export function Contact() {
                     className="h-11 w-full rounded-xl bg-white/5 px-4 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20"
                     value={state.name}
                     onChange={(e) => onChange("name", e.target.value)}
-                    placeholder="Your name"
+                    placeholder="Full name"
                     autoComplete="name"
                     required
                   />
@@ -133,7 +133,7 @@ export function Contact() {
                     className="h-11 w-full rounded-xl bg-white/5 px-4 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20"
                     value={state.email}
                     onChange={(e) => onChange("email", e.target.value)}
-                    placeholder="you@company.com"
+                    placeholder="name@company.com"
                     autoComplete="email"
                     type="email"
                     required
@@ -165,7 +165,7 @@ export function Contact() {
                 </Button>
 
                 {status === "success" ? (
-                  <p className="text-sm text-emerald-300">Message sent successfully.</p>
+                  <p className="text-sm text-emerald-300">Message sent.</p>
                 ) : status === "error" ? (
                   <p className="text-sm text-red-300">{errorMessage}</p>
                 ) : (
@@ -173,7 +173,7 @@ export function Contact() {
                     className="text-sm text-white/70 hover:text-white underline underline-offset-4"
                     href={
                       SOCIALS.find((s) => s.label === "Email")?.href ??
-                      "mailto:you@example.com"
+                      "mailto:alex.mitkov.dev@gmail.com"
                     }
                   >
                     Prefer email?

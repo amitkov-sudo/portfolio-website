@@ -10,8 +10,8 @@ export function Skills() {
       <Container>
         <SectionHeading
           eyebrow="Skills"
-          title="A rapidly growing and expanding toolkit."
-          description="Languages, frameworks, and tools I use to ship and operate systems."
+          title="Toolkit."
+          description="Languages, frameworks and tools for building and running production systems."
         />
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

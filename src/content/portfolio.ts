@@ -54,7 +54,7 @@ export const SITE = {
   headline: "AI research and engineering.",
   tagline: "Custom web experiences. AI-integrated intelligent business workflows.",
   summary:
-    "I study how language models catch their own errors. I test training methods that make them act on it. I build custom websites for small businesses. I add booking, motion and AI that save owners hours.",
+    "Researches how fine-tuning changes the way language models respond to a wrong reasoning step. Builds websites with booking, animation and AI tools for small businesses.",
   resumePath: "/api/resume",
   locationLine: "Las Vegas, NV • Remote research and client work",
   pricing: "Prices depend on the complexity of the build.",
@@ -81,9 +81,9 @@ export const RESEARCH: ResearchItem[] = [
     status: "Paper incoming",
     icon: FlaskConical,
     summary:
-      "Language models often register that their own reasoning has gone wrong, then keep going anyway. I study whether fine-tuning can teach a model to act on that signal, and to act only when the step is wrong.",
+      "Language models can register a wrong reasoning step and still build on the error. Tests whether fine-tuning teaches a model to fix that step without flagging correct ones.",
     points: [
-      "Measures the gap between what a model knows is wrong and what it fixes",
+      "Measures the gap between errors a model detects and errors a model fixes",
       "Compares GFlowNet-style fine-tuning with GRPO on real fixes against false alarms",
       "Extends the test to safety, where a false alarm means refusing a safe request",
     ],
@@ -96,7 +96,7 @@ export const RESEARCH: ResearchItem[] = [
     timeframe: "2026",
     icon: ClipboardCheck,
     summary:
-      "I write and calibrate hard computational-science tasks that test the limits of frontier AI models.",
+      "Writes and calibrates hard computational-science tasks for evaluating frontier AI models.",
     points: [],
     tags: ["Evaluation", "Computational chemistry"],
   },
@@ -127,7 +127,7 @@ export const SERVICES: Service[] = [
   {
     title: "Custom websites",
     description:
-      "A site designed around your brand, built by hand and tuned to load fast on any phone.",
+      "Custom design for each brand, hand-written code and fast loading on phones.",
     icon: Palette,
     points: ["Custom design and copy", "Mobile-first layouts", "SEO and analytics setup"],
   },
@@ -141,14 +141,14 @@ export const SERVICES: Service[] = [
   {
     title: "Interactive experiences",
     description:
-      "Animations, quizzes and tools that give visitors a reason to stay and come back.",
+      "Animations, quizzes and tools that keep visitors on the page.",
     icon: MousePointerClick,
     points: ["Scroll and hover motion", "Style finders and quizzes", "Click-to-edit content for owners"],
   },
   {
     title: "AI workflows",
     description:
-      "Assistants and automations that answer questions, sort requests and draft replies for you.",
+      "Assistants and automations that answer questions, sort requests and draft replies.",
     icon: Bot,
     points: ["Website chat assistants", "Lead and inbox triage", "Document and data pipelines"],
   },
@@ -181,16 +181,16 @@ export const CLIENT_WORK: ClientProject[] = [
       "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
       "A three-question look finder that matches each visitor to a service",
       "Before and after slider and a filterable lookbook that links each look to booking",
-      "Click-to-edit preview so the owner can change text, colors and fonts herself",
+      "Click-to-edit preview: the owner changes text, colors and fonts without a developer",
     ],
     aiTool: {
       name: "Swipe & Style",
       description:
-        "An AI style matcher I built for Marley's clients. Visitors swipe through haircut photos, and a model in their browser learns their taste with each swipe, then suggests the look and the service to book.",
+        "An AI style matcher for Marley's clients. Visitors swipe through haircut photos, and a model in the browser learns each visitor's taste from every swipe. After eight swipes, the model suggests a look and a service to book.",
       points: [
         "Online logistic regression over 20 hand-tagged style features, one update per swipe",
         "Active learning: the next photo is the one the model is least sure about",
-        "Clients can send their matches to Marley before the appointment",
+        "Sends each client's matches to Marley before the appointment",
         "Anonymous style counts show Marley which looks clients love, with no names or device IDs",
       ],
     },
@@ -213,7 +213,7 @@ export const PROJECTS: Project[] = [
     slug: "railcast-ai",
     title: "RailCast AI: BART Transit Delay Prediction System",
     description:
-      "Provides real-time transit delay predictions by combining live GTFS data directly from BART with schedule context, ensuring accurate arrival estimates even when live signals are sparse.",
+      "Provides real-time transit delay predictions by combining live GTFS data from BART with schedule context, ensuring accurate arrival estimates even when live signals are sparse.",
 
     stack: [
       "Python",
@@ -395,7 +395,7 @@ export const TIMELINE: TimelineItem[] = [
     timeframe: "Sept 2026 – Present",
     icon: FlaskConical,
     bullets: [
-      "Research on whether fine-tuning teaches language models to act on errors they already detect, in a four-person team with an AI safety mentor.",
+      "Researches whether fine-tuning teaches language models to act on detected errors, in a four-person team with an AI safety mentor.",
       "Paper incoming.",
     ],
   },
@@ -407,7 +407,7 @@ export const TIMELINE: TimelineItem[] = [
     bullets: [
       "Developing a multi-engine OCR document processing pipeline in Python (OpenCV, PIL, Tesseract, PaddleOCR, EasyOCR): preprocessing scanned documents and emitting structured JSON with field-level coordinates across multiple document types.",
       "Benchmarked three OCR engines against real pharmaceutical scans; identified accuracy divergence by document type and delivered a data-backed engine recommendation.",
-      "Designing document classification and routing logic in Python to categorize incoming files and dispatch them to the correct extraction pipeline: reducing processing ambiguity and enabling modular extension.",
+      "Designing document classification and routing logic in Python to categorize incoming files and dispatch each file to the correct extraction pipeline: reducing processing ambiguity and enabling modular extension.",
       "Building a RAG retrieval system using LlamaIndex, FAISS/Chroma, and metadata filtering over Gemini and open-source LLMs, surfaced through a Gradio/Streamlit interface.",
     ],
   },
