@@ -9,13 +9,29 @@ import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 
+type Topic = "project" | "research";
+
 type FormState = {
+  topic: Topic;
   name: string;
   email: string;
   message: string;
 };
 
-const DEFAULT_STATE: FormState = { name: "", email: "", message: "" };
+const DEFAULT_STATE: FormState = { topic: "project", name: "", email: "", message: "" };
+
+const TOPICS: { id: Topic; label: string; placeholder: string }[] = [
+  {
+    id: "project",
+    label: "Start a project",
+    placeholder: "What do you do, and what should your website or workflow handle?",
+  },
+  {
+    id: "research",
+    label: "Research and roles",
+    placeholder: "Tell me about the research, collaboration or role you have in mind.",
+  },
+];
 
 export function Contact() {
   const [state, setState] = React.useState<FormState>(DEFAULT_STATE);
@@ -56,7 +72,7 @@ export function Contact() {
       }
 
       setStatus("success");
-      setState(DEFAULT_STATE);
+      setState((s) => ({ ...DEFAULT_STATE, topic: s.topic }));
     } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
@@ -68,8 +84,8 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Contact"
-          title="Tell me about your business."
-          description="Send a short note about what you want your site or workflow to do. I will reply with questions and next steps."
+          title="Let’s work together."
+          description="Pick a topic and send a short note. Clients: tell me what your site or workflow should do. Researchers and teams: tell me about the project or role."
         />
 
         <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
@@ -77,6 +93,24 @@ export function Contact() {
             <h3 className="text-sm font-semibold text-white">Message</h3>
 
             <form className="mt-5 space-y-4" onSubmit={onSubmit}>
+              <div role="radiogroup" aria-label="Topic" className="flex flex-wrap gap-2">
+                {TOPICS.map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    role="radio"
+                    aria-checked={state.topic === t.id}
+                    onClick={() => onChange("topic", t.id)}
+                    className={
+                      state.topic === t.id
+                        ? "rounded-full bg-white px-4 py-2 text-sm font-medium text-black"
+                        : "rounded-full bg-white/5 px-4 py-2 text-sm text-white/75 ring-1 ring-white/10 hover:bg-white/10 hover:text-white transition-colors"
+                    }
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2">
                   <span className="text-xs font-semibold tracking-[0.22em] uppercase text-white/55">
@@ -114,7 +148,7 @@ export function Contact() {
                   className="min-h-[140px] w-full resize-y rounded-xl bg-white/5 px-4 py-3 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20"
                   value={state.message}
                   onChange={(e) => onChange("message", e.target.value)}
-                  placeholder="What do you do, and what should your website or workflow handle?"
+                  placeholder={TOPICS.find((t) => t.id === state.topic)?.placeholder}
                   required
                 />
               </label>

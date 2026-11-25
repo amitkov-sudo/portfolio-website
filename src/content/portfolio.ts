@@ -1,8 +1,12 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  Atom,
   Bot,
+  Brain,
   Briefcase,
   CalendarCheck,
+  ClipboardCheck,
+  FlaskConical,
   Database,
   Github,
   GraduationCap,
@@ -47,13 +51,84 @@ export type TimelineItem = {
 
 export const SITE = {
   name: "Alex Mitkov",
-  roleLine: "Web developer and AI engineer",
-  headline: "Custom web experiences. AI-integrated intelligent business workflows.",
+  roleLine: "AI researcher and engineer",
+  headline: "AI research and engineering.",
+  tagline: "Custom web experiences. AI-integrated intelligent business workflows.",
   summary:
-    "I design and build fast, interactive websites for small businesses: online booking, motion that feels alive, and AI features that save you hours. You get one person who handles design, code, launch and the automation behind it.",
+    "I study how reinforcement learning shapes model behavior as an AI Research Fellow at Algoverse, with a focus on AI safety. I also design and build interactive websites for small businesses, with online booking, motion and AI features that save owners hours.",
   resumePath: "/api/resume",
-  locationLine: "Las Vegas, NV • Working with clients anywhere",
+  locationLine: "Las Vegas, NV • Remote research and client work",
+  pricing: "Per website project, depending on scope.",
 } as const;
+
+export type ResearchItem = {
+  slug: string;
+  title: string;
+  org: string;
+  timeframe: string;
+  status?: string;
+  icon: LucideIcon;
+  summary: string;
+  points: string[];
+  tags: string[];
+};
+
+export const RESEARCH: ResearchItem[] = [
+  {
+    slug: "algoverse-fellowship",
+    title: "AI Research Fellow",
+    org: "Algoverse",
+    timeframe: "Sept 2026 – Present",
+    icon: FlaskConical,
+    summary:
+      "I work on a four-person team, mentored by an AI safety researcher, studying how RL post-training changes model behavior and safety.",
+    points: [
+      "Proposed research directions and ran feasibility pilots on small open models",
+      "Team paper aimed at ICLR 2027 workshops",
+    ],
+    tags: ["Reinforcement learning", "Post-training", "AI safety"],
+  },
+  {
+    slug: "reward-hacking-routes",
+    title: "Does reward hacking look the same inside a model, however it was learned?",
+    org: "Independent research question",
+    timeframe: "2026",
+    status: "Proposal",
+    icon: Brain,
+    summary:
+      "A model can learn to game its tests through prompting, supervised fine-tuning or RL. I ask whether those routes leave the same internal signature, and whether a detector trained on one route catches the others.",
+    points: [
+      "Linear probes and crosscoder features on Qwen3-4B, compared across prompted, SFT and GRPO-trained models",
+      "Clean control runs and a KL-from-base axis so the routes compare fairly",
+    ],
+    tags: ["Interpretability", "Reward hacking", "GRPO", "Probes", "Crosscoders"],
+  },
+  {
+    slug: "ai-evaluation",
+    title: "Expert AI evaluation tasks",
+    org: "Mercor (contract)",
+    timeframe: "2026",
+    icon: ClipboardCheck,
+    summary:
+      "I write and calibrate hard computational-science tasks that test the limits of frontier AI models.",
+    points: [],
+    tags: ["Evaluation", "Computational chemistry"],
+  },
+  {
+    slug: "uc-merced",
+    title: "Quantum computing and computational chemistry",
+    org: "UC Merced, MS in Computational Chemistry",
+    timeframe: "2024 – 2026",
+    icon: Atom,
+    summary:
+      "Graduate research on quantum control, quantum molecular simulation and quantum error correction, with heavy computational work.",
+    points: [
+      "Built simulation workflows and analysis tooling with reproducible reporting",
+      "Presented results at seminars, poster conferences and group meetings",
+    ],
+    tags: ["Quantum computing", "Quantum control", "Molecular simulation"],
+  },
+];
 
 export type Service = {
   title: string;
@@ -100,6 +175,11 @@ export type ClientProject = {
   status: string;
   description: string;
   features: string[];
+  aiTool?: {
+    name: string;
+    description: string;
+    points: string[];
+  };
   stack: string[];
 };
 
@@ -110,14 +190,25 @@ export const CLIENT_WORK: ClientProject[] = [
     title: "Wellness salon site for a Las Vegas hairstylist",
     status: "Launching soon",
     description:
-      "A feminine, wellness-led site for an independent stylist who focuses on hair treatments, care rituals, cuts and color.",
+      "A wellness-led site for an independent stylist who focuses on hair treatments, care rituals, cuts and color.",
     features: [
       "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
-      "A three-question look finder and Swipe & Style, a swipe quiz that learns each visitor's taste",
+      "A three-question look finder that matches each visitor to a service",
       "Before and after slider and a filterable lookbook that links each look to booking",
       "Click-to-edit preview so the owner can change text, colors and fonts herself",
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Cloudflare Pages", "Cloudflare KV"],
+    aiTool: {
+      name: "Swipe & Style",
+      description:
+        "An AI style matcher I built for Marley's clients. Visitors swipe through haircut photos, and a model in their browser learns their taste with each swipe, then suggests the look and the service to book.",
+      points: [
+        "Online logistic regression over 20 hand-tagged style features, one update per swipe",
+        "Active learning: the next photo is the one the model is least sure about",
+        "Clients can send their matches to Marley before the appointment",
+        "Anonymous style counts show Marley which looks clients love, with no names or device IDs",
+      ],
+    },
+    stack: ["HTML", "CSS", "JavaScript", "Machine learning", "Cloudflare Pages", "Cloudflare KV"],
   },
 ];
 
@@ -312,6 +403,16 @@ export const SKILLS: SkillGroup[] = [
 ];
 
 export const TIMELINE: TimelineItem[] = [
+  {
+    title: "AI Research Fellow",
+    org: "Algoverse",
+    timeframe: "Sept 2026 – Present",
+    icon: FlaskConical,
+    bullets: [
+      "Research on RL post-training and AI safety in a four-person team with an AI safety mentor.",
+      "Team paper aimed at ICLR 2027 workshops.",
+    ],
+  },
   {
     title: "AI/ML Engineering Extern",
     org: "Pfizer (via Extern HQ)",

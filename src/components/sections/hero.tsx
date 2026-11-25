@@ -42,32 +42,35 @@ export function Hero() {
           </p>
           <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
             <span className="block bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">
-              Custom web experiences.
-            </span>
-            <span className="block bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
-              <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
+              {SITE.headline}
             </span>
           </h1>
+          <p className="mt-4 text-xl font-medium tracking-tight sm:text-2xl lg:text-3xl">
+            <span className="bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
+              Custom web experiences.{" "}
+              <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
+            </span>
+          </p>
           <p className="mt-5 text-base leading-8 text-white/70 sm:text-lg">
             {SITE.summary}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
-              onClick={() => scrollToId("contact")}
+              onClick={() => scrollToId("research")}
               className={cn(
                 "inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white text-black px-5 text-sm font-medium",
                 "hover:bg-white/90 active:bg-white/85 transition-colors",
                 "shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_10px_30px_-12px_rgba(0,0,0,0.65)]",
               )}
             >
-              Start a project <ArrowRight className="h-4 w-4" />
+              See research <ArrowRight className="h-4 w-4" />
             </button>
             <button
-              onClick={() => scrollToId("services")}
+              onClick={() => scrollToId("contact")}
               className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white/5 px-5 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/10 transition-colors"
             >
-              See services
+              Start a project
             </button>
             <ButtonLink href={SITE.resumePath} external variant="ghost">
               Resume <Download className="h-4 w-4" />

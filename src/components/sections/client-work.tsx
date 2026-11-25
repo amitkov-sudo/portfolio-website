@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Bot, Sparkles } from "lucide-react";
 
 import { CLIENT_WORK } from "@/content/portfolio";
 import { Badge } from "@/components/ui/badge";
@@ -67,6 +67,33 @@ export function ClientWork() {
                     ))}
                   </ul>
                 </div>
+
+                {w.aiTool ? (
+                  <div className="relative mt-6 rounded-2xl bg-gradient-to-br from-indigo-500/10 via-white/[0.02] to-emerald-400/10 p-5 ring-1 ring-white/10 sm:p-6">
+                    <div className="flex items-center gap-3">
+                      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/15">
+                        <Bot className="h-5 w-5 text-white" />
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200/80">
+                          AI tool
+                        </p>
+                        <h4 className="text-base font-semibold tracking-tight text-white">
+                          {w.aiTool.name}
+                        </h4>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-white/75">{w.aiTool.description}</p>
+                    <ul className="mt-4 grid gap-2 text-sm text-white/75 sm:grid-cols-2">
+                      {w.aiTool.points.map((p) => (
+                        <li key={p} className="flex gap-2">
+                          <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-300/70" />
+                          <span className="leading-7">{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </Card>
             </motion.div>
           ))}

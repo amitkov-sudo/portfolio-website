@@ -5,6 +5,7 @@ import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
 import { Services } from "@/components/sections/services";
+import { Research } from "@/components/sections/research";
 import { ClientWork } from "@/components/sections/client-work";
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:56px_56px]" />
       </div>
       <Hero />
-      <Services />
+      <Research />
       <ClientWork />
+      <Services />
       <About />
       <Projects />
       <Skills />

@@ -1,7 +1,8 @@
 export type SectionId =
   | "top"
-  | "services"
+  | "research"
   | "work"
+  | "services"
   | "about"
   | "projects"
   | "skills"
@@ -10,8 +11,9 @@ export type SectionId =
 
 export const SECTION_IDS: SectionId[] = [
   "top",
-  "services",
+  "research",
   "work",
+  "services",
   "about",
   "projects",
   "skills",
@@ -22,9 +24,9 @@ export const SECTION_IDS: SectionId[] = [
 export type NavItem = { id: Exclude<SectionId, "top">; label: string };
 
 export const NAV_ITEMS: NavItem[] = [
-  { id: "services", label: "Services" },
+  { id: "research", label: "Research" },
   { id: "work", label: "Work" },
-  { id: "about", label: "About" },
+  { id: "services", label: "Services" },
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },

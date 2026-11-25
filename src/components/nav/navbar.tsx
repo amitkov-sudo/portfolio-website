@@ -103,7 +103,7 @@ export function Navbar() {
               }}
               className="hidden sm:inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-black hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             >
-              Start a project
+              Get in touch
             </button>
 
             <button
