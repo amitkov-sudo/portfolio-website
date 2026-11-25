@@ -111,7 +111,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What does hosting cost after launch?",
-    a: "Alex Mitkov picks hosting to fit the budget. Static sites can run on free hosting tiers, as the Marley Bergen site does.",
+    a: "Alex Mitkov picks hosting to fit the budget. Static sites can run on free hosting tiers.",
   },
   {
     q: "Can the owner update the site after launch?",
