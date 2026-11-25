@@ -236,7 +236,7 @@ export const CLIENT_WORK: ClientProject[] = [
   {
     slug: "marley-bergen-hair-rituals",
     client: "Marley Bergen Hair Rituals",
-    title: "Wellness salon site for a Las Vegas hairstylist",
+    title: "Wellness-Forward Hair Salon",
     status: "Launching soon",
     description:
       "A wellness-led site for an independent stylist who focuses on hair treatments, care rituals, cuts and color.",

@@ -10,7 +10,6 @@ export function About() {
         <SectionHeading
           eyebrow="Founder"
           title="Alex Mitkov, founder and AI researcher."
-          description="Quantum chemistry first, then AI research and client builds."
         />
 
         <div className="grid gap-4 lg:grid-cols-3">

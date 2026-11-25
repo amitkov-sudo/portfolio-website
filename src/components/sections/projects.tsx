@@ -67,7 +67,6 @@ export function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Engineering projects."
-          description="Backend, data and machine learning systems, with code on GitHub."
         />
         <p className="mt-2 max-w-2xl text-sm leading-7 text-white/70">
           <a

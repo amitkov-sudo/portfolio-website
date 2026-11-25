@@ -10,7 +10,6 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience / Education"
           title="Experience and education at a glance."
-          description="Roles, research programs and degrees."
         />
 
         <div className="relative">
