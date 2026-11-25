@@ -3,6 +3,8 @@ import { Resend } from "resend";
 
 type ContactBody = {
   topic?: string;
+  business?: string;
+  budget?: string;
   name: string;
   email: string;
   message: string;
@@ -27,7 +29,13 @@ export async function POST(req: Request) {
   const name = isNonEmptyString(body?.name) ? body.name.trim() : "";
   const email = isNonEmptyString(body?.email) ? body.email.trim() : "";
   const message = isNonEmptyString(body?.message) ? body.message.trim() : "";
-  const topic = body?.topic === "research" ? "Research and roles" : "New project";
+  const topic = body?.topic === "research" ? "Research and partnerships" : "New project";
+  const business = isNonEmptyString(body?.business) ? body.business.trim().slice(0, 200) : "";
+  const budget = isNonEmptyString(body?.budget) ? body.budget.trim().slice(0, 50) : "";
+  const extra = [business && `Business: ${business}`, budget && `Budget: ${budget}`]
+    .filter(Boolean)
+    .map((l) => `${l}\n`)
+    .join("");
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
@@ -55,7 +63,7 @@ export async function POST(req: Request) {
       to,
       replyTo: email,
       subject: `[${topic}] Portfolio message from ${name}`,
-      text: `Topic: ${topic}\nName: ${name}\nEmail: ${email}\n\n${message}\n`,
+      text: `Topic: ${topic}\nName: ${name}\nEmail: ${email}\n${extra}\n${message}\n`,
     });
 
     return NextResponse.json({ ok: true });

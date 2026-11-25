@@ -50,14 +50,14 @@ export function Navbar() {
                 aria-hidden="true"
                 className="h-2 w-2 rounded-full bg-emerald-400/90 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]"
               />
-              <span className="text-sm font-semibold tracking-tight bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent sm:text-base">
+              <span className="whitespace-nowrap text-sm font-semibold tracking-tight bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent sm:text-base">
                 {SITE.name}
               </span>
             </span>
             <span className="sr-only">Go to top</span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
               return (
@@ -103,13 +103,13 @@ export function Navbar() {
                 setActiveSection("contact");
                 scrollToId("contact");
               }}
-              className="hidden sm:inline-flex h-9 items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-black hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+              className="hidden sm:inline-flex h-9 whitespace-nowrap items-center justify-center rounded-full bg-white px-4 text-sm font-medium text-black hover:bg-white/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
             >
-              Get in touch
+              Request a quote
             </button>
 
             <button
-              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+              className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-white/80 hover:text-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
               onClick={() => setMobileOpen((v) => !v)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
@@ -123,7 +123,7 @@ export function Navbar() {
       <AnimatePresence>
         {mobileOpen ? (
           <motion.div
-            className="md:hidden pointer-events-auto border-b border-white/10 bg-black/80 backdrop-blur"
+            className="lg:hidden pointer-events-auto border-b border-white/10 bg-black/80 backdrop-blur"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

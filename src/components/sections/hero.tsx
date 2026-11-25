@@ -2,12 +2,10 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
-import { SITE, SOCIALS } from "@/content/portfolio";
-import { ButtonLink } from "@/components/ui/button";
+import { SITE, TRUST_POINTS } from "@/content/portfolio";
 import { Container } from "@/components/ui/container";
-import { cn } from "@/lib/cn";
 
 function scrollToId(id: string) {
   const el = document.getElementById(id);
@@ -20,80 +18,58 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-16">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.20),rgba(0,0,0,0)_60%)] blur-2xl" />
-        <div className="absolute -top-24 left-1/2 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.14),rgba(0,0,0,0)_65%)] blur-2xl" />
+        <div className="absolute -top-48 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.10),rgba(0,0,0,0)_60%)] blur-2xl" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-background/75 via-70% to-background to-100%" />
       </div>
 
-      <Container className="relative py-14 sm:py-20">
+      <Container className="relative py-16 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 220, damping: 28 }}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <p className="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-xs font-medium text-white/75 ring-1 ring-white/10">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400/90" />
-            {SITE.locationLine}
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
+            {SITE.name} · {SITE.roleLine} · {SITE.locationLine}
           </p>
 
-          <p className="mt-6 text-sm font-medium tracking-wide text-white/60">
-            {SITE.name} · {SITE.roleLine}
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            <span className="block bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">
-              {SITE.headline}
+          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+            {SITE.headline}
+            <span className="block text-white/55">
+              <span className="whitespace-nowrap">AI-integrated</span> intelligent business
+              workflows.
             </span>
           </h1>
-          <p className="mt-4 text-xl font-medium tracking-tight sm:text-2xl lg:text-3xl">
-            <span className="bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
-              Custom web experiences.{" "}
-              <span className="whitespace-nowrap">AI-integrated</span> intelligent business workflows.
-            </span>
-          </p>
-          <p className="mt-5 text-base leading-8 text-white/70 sm:text-lg">
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
             {SITE.summary}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
-              onClick={() => scrollToId("research")}
-              className={cn(
-                "inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white text-black px-5 text-sm font-medium",
-                "hover:bg-white/90 active:bg-white/85 transition-colors",
-                "shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_10px_30px_-12px_rgba(0,0,0,0.65)]",
-              )}
+              onClick={() => scrollToId("contact")}
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-black hover:bg-white/90 transition-colors"
             >
-              See research <ArrowRight className="h-4 w-4" />
+              Request a quote <ArrowRight className="h-4 w-4" />
             </button>
             <button
-              onClick={() => scrollToId("contact")}
+              onClick={() => scrollToId("services")}
               className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white/5 px-5 text-sm font-medium text-white ring-1 ring-white/15 hover:bg-white/10 transition-colors"
             >
-              Start a project
+              View services
             </button>
-            <ButtonLink href={SITE.resumePath} external variant="ghost">
-              Resume <Download className="h-4 w-4" />
-            </ButtonLink>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-white/0 px-3 py-2 text-sm text-white/70 ring-1 ring-white/10 hover:bg-white/5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-              >
-                <s.icon className="h-4 w-4" />
-                {s.label}
-              </a>
-            ))}
           </div>
         </motion.div>
+
+        <ul className="mt-14 grid gap-3 border-t border-white/10 pt-6 text-sm text-white/70 sm:grid-cols-2 lg:grid-cols-4">
+          {TRUST_POINTS.map((t) => (
+            <li key={t} className="flex items-start gap-2">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+              {t}
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
 }
-

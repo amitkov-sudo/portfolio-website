@@ -1,14 +1,15 @@
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card } from "@/components/ui/card";
+import { SITE } from "@/content/portfolio";
 
 export function About() {
   return (
     <section id="about" className="scroll-mt-24 py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="About"
-          title="AI researcher and engineer in Las Vegas."
+          eyebrow="Founder"
+          title="Alex Mitkov, founder and AI researcher."
           description="Quantum chemistry first, then AI research and client builds."
         />
 
@@ -24,6 +25,14 @@ export function About() {
               booking to assistants that answer common questions. Works with each
               client from the first call to launch day.
             </p>
+            <a
+              href={SITE.resumePath}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex text-sm text-white/70 underline underline-offset-4 hover:text-white"
+            >
+              Download resume
+            </a>
           </Card>
 
           <Card className="p-6">

@@ -50,15 +50,78 @@ export type TimelineItem = {
 
 export const SITE = {
   name: "Alex Mitkov",
-  roleLine: "AI researcher and engineer",
-  headline: "AI research and engineering.",
-  tagline: "Custom web experiences. AI-integrated intelligent business workflows.",
+  roleLine: "Web development and applied AI",
+  headline: "Custom web experiences.",
   summary:
-    "Researches how fine-tuning changes the way language models respond to a wrong reasoning step. Builds websites with booking, animation and AI tools for small businesses.",
+    "Alex Mitkov designs and builds websites, booking systems and AI tools for small businesses. Every project starts with a written scope and quote.",
   resumePath: "/api/resume",
-  locationLine: "Las Vegas, NV • Remote research and client work",
+  locationLine: "Las Vegas, Nevada",
+  priceRange: "$1,500 to $4,000+",
   pricing: "Prices depend on the complexity of the build.",
 } as const;
+
+export const TRUST_POINTS: string[] = [
+  "Founded by an AI researcher and engineer",
+  "Written scope before any build work",
+  "Projects from $1,500",
+  "Based in Las Vegas, serving clients anywhere",
+];
+
+export type Step = { title: string; description: string };
+
+export const PROCESS: Step[] = [
+  {
+    title: "Discovery call",
+    description: "Alex Mitkov and the client walk through goals, pages, features and budget on a first call.",
+  },
+  {
+    title: "Scope and quote",
+    description:
+      "A written scope lists pages, features, price and launch date before work starts.",
+  },
+  {
+    title: "Design and build",
+    description:
+      "Design and development run on a private preview link, and the client reviews the real site at each stage.",
+  },
+  {
+    title: "Launch and support",
+    description:
+      "Launch includes domain, hosting and analytics setup, plus a handover walkthrough.",
+  },
+];
+
+export const PRICING_FACTORS: string[] = [
+  "Number of pages and depth of custom design",
+  "Online booking, deposits and memberships",
+  "AI tools such as style matchers and chat assistants",
+  "Connections to existing calendars, email or payment accounts",
+];
+
+export type Faq = { q: string; a: string };
+
+export const FAQS: Faq[] = [
+  {
+    q: "How much does a website cost?",
+    a: "Projects range from $1,500 to $4,000+. Pages, booking and payment features, and AI tools set the final price.",
+  },
+  {
+    q: "How long does a project take?",
+    a: "Timelines depend on scope. The written quote gives a launch date before work starts.",
+  },
+  {
+    q: "What does hosting cost after launch?",
+    a: "Alex Mitkov picks hosting to fit the budget. Static sites can run on free hosting tiers, as the Marley Bergen site does.",
+  },
+  {
+    q: "Can the owner update the site after launch?",
+    a: "Sites can include click-to-edit tools, so owners change text, colors and fonts without a developer.",
+  },
+  {
+    q: "Who owns the domain, content and code?",
+    a: "The written scope sets out ownership of the domain, content and code for each project.",
+  },
+];
 
 export type ResearchItem = {
   slug: string;

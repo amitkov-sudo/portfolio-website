@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Alex Mitkov | AI research and engineering",
+    default: "Alex Mitkov | Custom websites and AI workflows for small businesses",
     template: "%s | Alex Mitkov",
   },
   description:
-    "Alex Mitkov researches reinforcement learning and AI safety, and builds custom web experiences and AI-integrated workflows for small businesses.",
+    "Alex Mitkov designs and builds websites, booking systems and AI tools for small businesses. Based in Las Vegas. Projects from $1,500.",
   metadataBase: new URL("https://amitkov.dev"),
   openGraph: {
-    title: "Alex Mitkov | AI research and engineering",
+    title: "Alex Mitkov | Custom websites and AI workflows for small businesses",
     description:
       "Custom web experiences. AI-integrated intelligent business workflows.",
     url: "https://amitkov.dev",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Mitkov | AI research and engineering",
+    title: "Alex Mitkov | Custom websites and AI workflows for small businesses",
     description:
       "Custom web experiences. AI-integrated intelligent business workflows.",
   },

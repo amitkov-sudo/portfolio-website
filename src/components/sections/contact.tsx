@@ -15,10 +15,24 @@ type FormState = {
   topic: Topic;
   name: string;
   email: string;
+  business: string;
+  budget: string;
   message: string;
 };
 
-const DEFAULT_STATE: FormState = { topic: "project", name: "", email: "", message: "" };
+const DEFAULT_STATE: FormState = {
+  topic: "project",
+  name: "",
+  email: "",
+  business: "",
+  budget: "",
+  message: "",
+};
+
+const BUDGETS = ["$1,500 to $2,500", "$2,500 to $4,000", "$4,000+", "Not sure yet"];
+
+const FIELD =
+  "h-11 w-full rounded-xl bg-white/5 px-4 text-sm text-white ring-1 ring-white/10 placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-white/20";
 
 const TOPICS: { id: Topic; label: string; placeholder: string }[] = [
   {
@@ -28,7 +42,7 @@ const TOPICS: { id: Topic; label: string; placeholder: string }[] = [
   },
   {
     id: "research",
-    label: "Research and roles",
+    label: "Research and partnerships",
     placeholder: "Describe the research, collaboration or role.",
   },
 ];
@@ -60,7 +74,9 @@ export function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(state),
+        body: JSON.stringify(
+          state.topic === "project" ? state : { ...state, business: "", budget: "" },
+        ),
       });
 
       const data = await response.json();
@@ -84,8 +100,8 @@ export function Contact() {
       <Container>
         <SectionHeading
           eyebrow="Contact"
-          title="Start a conversation."
-          description="Pick a topic and send a short note. Clients: describe what the site or workflow should do. Researchers and teams: describe the project or role."
+          title="Request a quote."
+          description="Share the business, the budget and what the site or workflow should do. Research teams can pick the second topic."
         />
 
         <div className="grid gap-4 lg:grid-cols-2 [&>*]:min-w-0">
@@ -140,6 +156,39 @@ export function Contact() {
                   />
                 </label>
               </div>
+              {state.topic === "project" ? (
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <label className="space-y-2">
+                    <span className="text-xs font-semibold tracking-[0.22em] uppercase text-white/55">
+                      Business type
+                    </span>
+                    <input
+                      className={FIELD}
+                      value={state.business}
+                      onChange={(e) => onChange("business", e.target.value)}
+                      placeholder="Salon, clinic, studio..."
+                      autoComplete="organization"
+                    />
+                  </label>
+                  <label className="space-y-2">
+                    <span className="text-xs font-semibold tracking-[0.22em] uppercase text-white/55">
+                      Budget
+                    </span>
+                    <select
+                      className={FIELD}
+                      value={state.budget}
+                      onChange={(e) => onChange("budget", e.target.value)}
+                    >
+                      <option value="">Select a range</option>
+                      {BUDGETS.map((b) => (
+                        <option key={b} value={b}>
+                          {b}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+              ) : null}
               <label className="space-y-2 block">
                 <span className="text-xs font-semibold tracking-[0.22em] uppercase text-white/55">
                   Message
