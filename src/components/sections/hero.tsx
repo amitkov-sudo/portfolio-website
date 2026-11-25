@@ -34,8 +34,10 @@ export function Hero() {
           </p>
 
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            {SITE.headline}
-            <span className="block text-white/55">
+            <span className="block bg-gradient-to-r from-white via-white to-indigo-200 bg-clip-text text-transparent">
+              {SITE.headline}
+            </span>
+            <span className="block bg-gradient-to-r from-indigo-200 via-sky-200 to-emerald-200 bg-clip-text text-transparent">
               <span className="whitespace-nowrap">AI-integrated</span> intelligent business
               workflows.
             </span>
