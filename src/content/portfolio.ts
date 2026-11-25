@@ -4,7 +4,7 @@ import {
   Bot,
   Briefcase,
   CalendarCheck,
-  ClipboardCheck,
+  ShieldCheck,
   FlaskConical,
   Database,
   Github,
@@ -158,11 +158,11 @@ export const RESEARCH: ResearchItem[] = [
     title: "AI Capability Research, Computational Scientist",
     org: "Mercor",
     timeframe: "2026",
-    icon: ClipboardCheck,
+    icon: ShieldCheck,
     summary:
-      "Writes and calibrates hard computational-science tasks for evaluating frontier AI models.",
+      "Researches the capabilities and failure modes of frontier AI models in expert computational science to support AI safety.",
     points: [],
-    tags: ["Evaluation", "Computational chemistry"],
+    tags: ["AI safety", "Frontier AI capabilities", "Computational chemistry", "Quantum chemistry", "Scientific computing", "Python"],
   },
   {
     slug: "uc-merced",
