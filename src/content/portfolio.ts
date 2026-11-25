@@ -247,10 +247,10 @@ export const CLIENT_WORK: ClientProject[] = [
     description:
       "Wellness-Centered hair studio nestled in the beautiful Las Vegas valley, offering restorative hair rituals, precision cuts and luminous color, plus in-home and hotel blowouts.",
     features: [
-      "Online booking for studio, home and hotel visits, with a dandelion animation when a client confirms",
-      "A three-question look finder that matches each visitor to a service",
-      "Before and after slider and a filterable lookbook that links each look to booking",
-      "Click-to-edit preview: the owner changes text, colors and fonts without a developer",
+      "End-to-end online booking for studio, in-home and hotel appointments",
+      "Guided service discovery that matches each visitor to the right treatment",
+      "Interactive lookbook and before-and-after gallery tied to booking",
+      "Owner-managed content editing with no developer required",
     ],
     aiTool: {
       name: "Swipe & Style",
