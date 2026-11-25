@@ -13,9 +13,7 @@ export function Footer() {
           <p className="text-xs text-white/40">
             Designed, developed & AI-integrated by{" "}
             <a
-              href="https://www.linkedin.com/in/amitkov/"
-              target="_blank"
-              rel="noreferrer"
+              href="https://amitkov.dev"
               className="underline underline-offset-4 hover:text-white"
             >
               Alex Mitkov

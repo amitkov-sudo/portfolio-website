@@ -5,6 +5,7 @@ import { ActiveSectionProvider } from "@/components/active-section";
 import { Navbar } from "@/components/nav/navbar";
 import { Footer } from "@/components/footer";
 import { Announcement } from "@/components/announcement";
+import { BackToTop } from "@/components/back-to-top";
 import { Intro } from "@/components/intro";
 
 const geistSans = Geist({
@@ -65,6 +66,7 @@ export default function RootLayout({
           <Announcement />
           {children}
           <Footer />
+          <BackToTop />
         </ActiveSectionProvider>
       </body>
     </html>
