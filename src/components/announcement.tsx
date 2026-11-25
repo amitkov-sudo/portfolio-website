@@ -45,10 +45,6 @@ export function Announcement() {
         ))}
       </div>
       <div className="relative mx-auto flex max-w-6xl items-center justify-center gap-3 px-6 py-4 sm:py-5">
-        <span className="relative flex h-2 w-2" aria-hidden="true">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-        </span>
         <span
           className={`${michroma.className} text-center text-[10px] uppercase leading-relaxed tracking-[0.1em] text-[#cbd5e1] sm:text-xs sm:tracking-[0.2em]`}
         >
