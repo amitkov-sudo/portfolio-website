@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
@@ -9,12 +10,18 @@ import {
   Database,
   Github,
   GraduationCap,
+  KeyRound,
   Linkedin,
   Mail,
   MousePointerClick,
   Palette,
+  ScanFace,
   Sparkles,
+  Wallet,
 } from "lucide-react";
+
+import astroBlackAndWhite from "./astro/astro-black-and-white.jpg";
+import astroPinkAndWhite from "./astro/astro-pink-and-white.jpg";
 
 export type SocialLink = {
   label: string;
@@ -181,11 +188,30 @@ export const RESEARCH: ResearchItem[] = [
   },
 ];
 
+/* A service sold as a named product. The services section gives it a
+   full-width row: wordmark, pitch, buttons, screenshots and reasons to buy,
+   with the specs behind a fold. */
+export type ServiceProduct = {
+  anchor: string;
+  name: string;
+  version: string;
+  status: string;
+  tagline: string;
+  cta: { label: string; href: string };
+  price: { label: string; value: string };
+  live: { label: string; href: string };
+  shots: { src: StaticImageData; alt: string; caption: string }[];
+  benefits: { title: string; text: string; icon: LucideIcon }[];
+  specs: { label: string; value: string }[];
+  notes: string[];
+};
+
 export type Service = {
   title: string;
   description: string;
   icon: LucideIcon;
   points: string[];
+  product?: ServiceProduct;
 };
 
 export const SERVICES: Service[] = [
@@ -220,6 +246,108 @@ export const SERVICES: Service[] = [
       "Assistants and automations that answer questions, sort requests and draft replies.",
     icon: Bot,
     points: ["Website chat assistants", "Lead and inbox triage", "Document and data pipelines"],
+  },
+  /* ASTRO. Each line here traces to the README of the ASTRO kit, version
+     1.0.0. Check a change against that README before editing. */
+  {
+    title: "ASTRO by Alex Mitkov",
+    description:
+      "ASTRO adds customer accounts to your website. Customers sign in with Face ID or a fingerprint, or with an email and a password. Their accounts stay in your site's own database, with no sign-in company in the middle and no monthly fee.",
+    icon: KeyRound,
+    points: [],
+    product: {
+      anchor: "astro",
+      name: "ASTRO by Alex Mitkov",
+      version: "Version 1.0.0",
+      status: "Live on a client site",
+      tagline: "Let your customers sign in with Face ID.",
+      cta: { label: "Get ASTRO for your site", href: "#contact" },
+      price: { label: "Price", value: "Coming soon" },
+      live: {
+        label: "See it live",
+        href: "https://marley-bergen-hair.pages.dev/astro/",
+      },
+      shots: [
+        {
+          src: astroBlackAndWhite,
+          alt: "Sign-in screen in black and white, with a passkey button above the email and password fields.",
+          caption: "Sign in, black and white",
+        },
+        {
+          src: astroPinkAndWhite,
+          alt: "Sign-up screen in pink and white, with a passkey button above the email and password fields.",
+          caption: "Sign up, pink and white",
+        },
+      ],
+      benefits: [
+        {
+          title: "One tap to sign in",
+          text: "Face ID, Touch ID or a fingerprint signs a customer in. No password to type.",
+          icon: ScanFace,
+        },
+        {
+          title: "Your own customer database",
+          text: "Each site keeps its own accounts under its own secret. No outside service holds them.",
+          icon: Database,
+        },
+        {
+          title: "No monthly fee",
+          text: "No sign-in subscription. ASTRO runs on the site's own Cloudflare hosting.",
+          icon: Wallet,
+        },
+        {
+          title: "Security you can check",
+          text: "The server never receives a password. 124 automated checks cover the kit.",
+          icon: ShieldCheck,
+        },
+      ],
+      specs: [
+        {
+          label: "Passwords",
+          value:
+            "15 characters or more. The browser stretches each password with PBKDF2-SHA-256 at 600,000 rounds, so the server never receives it.",
+        },
+        {
+          label: "Leaked passwords",
+          value:
+            "The browser checks each new password against the public Have I Been Pwned list.",
+        },
+        {
+          label: "Emails",
+          value: "The database holds each email sealed with AES-256-GCM.",
+        },
+        {
+          label: "Sessions",
+          value:
+            "A sign-in lasts 30 days. The database holds a SHA-256 hash of each session token and a keyed hash of each reset code.",
+        },
+        {
+          label: "Lockouts",
+          value:
+            "Every fifth wrong password locks that email: 15 minutes at first, doubling up to a day.",
+        },
+        {
+          label: "Standards",
+          value:
+            "Password and session lengths come from NIST SP 800-63B-4. The round count comes from the OWASP Password Storage Cheat Sheet.",
+        },
+        {
+          label: "Hosting",
+          value:
+            "Cloudflare Pages with a D1 database. One installer script copies the kit into a site.",
+        },
+        {
+          label: "Tests",
+          value:
+            "124 automated checks. One reads the test database file and confirms it holds no email or password in readable form.",
+        },
+      ],
+      notes: [
+        "The app sends no email. A visitor who forgets a password signs in with a passkey, or asks the site owner for a one-time code.",
+        "Each site keeps its own accounts. A visitor needs a separate account on each site.",
+        "A password sign-in has no second factor. A passkey with Face ID counts as two.",
+      ],
+    },
   },
 ];
 
