@@ -199,7 +199,6 @@ export type ServiceProduct = {
   tagline: string;
   cta: { label: string; href: string };
   price: { label: string; value: string };
-  live: { label: string; href: string };
   shots: { src: StaticImageData; alt: string; caption: string }[];
   benefits: { title: string; text: string; icon: LucideIcon }[];
   specs: { label: string; value: string }[];
@@ -263,10 +262,6 @@ export const SERVICES: Service[] = [
       tagline: "Let your customers sign in with Face ID.",
       cta: { label: "Get ASTRO for your site", href: "#contact" },
       price: { label: "Price", value: "Coming soon" },
-      live: {
-        label: "See it live",
-        href: "https://marley-bergen-hair.pages.dev/astro/",
-      },
       shots: [
         {
           src: astroBlackAndWhite,

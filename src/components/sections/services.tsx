@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Check, ChevronDown, ExternalLink } from "lucide-react";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
 
 import { SERVICES, type Service, type ServiceProduct } from "@/content/portfolio";
 import { AstroWordmark } from "@/components/astro-wordmark";
@@ -36,9 +36,9 @@ function Prose({ children }: { children: string }) {
   ));
 }
 
-/* A product for sale takes the full row. The wordmark, the pitch and the two
-   buttons sit beside the screenshots, the reasons to buy follow, and the
-   specs wait behind a fold for a reader who checks. */
+/* A product for sale takes the full row. The wordmark, the pitch, the button
+   and the price sit beside the screenshots, the reasons to buy follow, and
+   the specs wait behind a fold for a reader who checks. */
 function ProductCard({
   service,
   product,
@@ -85,15 +85,6 @@ function ProductCard({
               className="inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white px-5 text-sm font-medium text-black transition-colors hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
               {product.cta.label} <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={product.live.href}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/5 px-5 text-sm font-medium text-white ring-1 ring-white/15 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-            >
-              <ExternalLink className="h-4 w-4" />
-              {product.live.label}
             </a>
             <p className="sm:ml-3">
               <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-white/55">
